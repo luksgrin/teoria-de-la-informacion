@@ -1,0 +1,362 @@
+## Estructura del lenguaje
+
+Antes de estudiar fuentes de información, es necesario definir un lenguaje para representar los mensajes que se van a transmitir. En general, un lenguaje es un conjunto de símbolos y reglas que permiten construir mensajes a partir de esos símbolos.
+
+### Alfabetos y palabras
+
+Un **alfabeto** es un conjunto finito de símbolos. Por ejemplo, nuestro alfabeto podría decirse que está formado por las letras del abecedario. Un **símbolo** es un elemento de un alfabeto. Por ejemplo, la letra "a" es un símbolo de nuestro alfabeto.
+
+En lenguaje formal matemático, un alfabeto $\mathcal{A}$ es un conjunto finito (salvo que se indique lo contrario de forma explícita) y no vacío cuyos elementos se denominan **símbolos**. Por ejemplo, si $\mathcal{A} = \{a, b, c\}$, entonces $a$, $b$ y $c$ son símbolos de $\mathcal{A}$.
+
+Sea entonces $\mathcal{A}$ un alfabeto. Una **palabra** $x$ es una secuencia finita de símbolos de $\mathcal{A}$ de la forma
+
+$$
+x=a_1a_2\dots a_n, \quad a_i \in \mathcal{A}, \quad i=1,2,\dots,n
+$$
+
+Definimos la **longitud** de una palabra $x$ como el número de símbolos que contiene. La longitud de una palabra $x$ se denota por $|x|$.
+
+Sea $\mathcal{A}^n,n\geq 1$ el conjunto de todas las palabras de longitud $n$ formadas por símbolos de $\mathcal{A}$.
+
+El número de elementos (también llamado cardinal) de $\mathcal{A}^n$ es $|\mathcal{A}|^n$.
+
+---
+
+#### Ejemplo
+
+Tenemos un alfabeto $\mathcal{A}=\{0,1\}$, y queremos encontrar el conjunto de todas las palabras de longitud 3 formadas por símbolos de $\mathcal{A}$.
+
+Entonces, $\mathcal{A}^3=\{000,001,010,011,100,101,110,111\}$.
+
+Como $|\mathcal{A}|=2$, el número de elementos de $\mathcal{A}^3$ es $|\mathcal{A}|^3=2^3=8$.
+
+---
+
+Teniendo un alfabeto $\mathcal{A}$, el conjunto de todas las palabras finitas (no nulas) formadas por símbolos de $\mathcal{A}$ se denota por $\mathcal{A}^+$ y se define como:
+
+$$
+\begin{align*}
+\mathcal{A}^+&=\mathcal{A}^1\cup\mathcal{A}^2\cup\dots\cup\mathcal{A}^n,\quad n\geq1\\
+&= \bigcup_{n\geq1}\mathcal{A}^n
+\end{align*}
+$$
+
+Es decir, $\mathcal{A}^+$ es la unión de todos los conjuntos de palabras de longitud $n$ formadas por símbolos de $\mathcal{A}$. Se trata de un conjunto donde existen palabras de todas las longitudes posibles hasta un máximo de longitud $n$. Este conjunto se parece un poco a las palabras en el lenguaje natural, donde existen palabras de diferentes longitudes.
+
+_¿Cuántos elementos tiene $\mathcal{A}^+$?_
+
+Sabemos que
+
+$$
+\begin{align*}
+\mathcal{A}^+&= \bigcup_{n\geq1}\mathcal{A}^n\\
+&=\mathcal{A}^1\cup\mathcal{A}^2\cup\dots\cup\mathcal{A}^n,\quad n\geq1\\
+\end{align*}
+$$
+
+Además, el número de elementos de $\mathcal{A}^n$ es $|\mathcal{A}|^n$. Por lo tanto, el número de elementos de $\mathcal{A}^+$ es
+
+$$
+\begin{align*}
+|\mathcal{A}^+|&=|\mathcal{A}^1|+|\mathcal{A}^2|+\dots+|\mathcal{A}^n|\\
+&=|\mathcal{A}|+|\mathcal{A}|^2+\dots+|\mathcal{A}|^n\\
+&=\sum_{n\geq1}|\mathcal{A}|^n
+\end{align*}
+$$
+
+Esto se parece a una serie geométrica...
+
+$$
+\begin{align*}
+\sum_{n\geq 1}|\mathcal{A}|^n&=\sum_{n\geq 0}|\mathcal{A}|^n - 1\\
+&=\frac{1-|\mathcal{A}|^{n+1}}{1-|\mathcal{A}|} - 1\\
+\end{align*}
+$$
+
+Por lo tanto, el número de elementos de $\mathcal{A}^+$ es
+
+$$
+|\mathcal{A}^+|=\frac{1-|\mathcal{A}|^{n+1}}{1-|\mathcal{A}|} - 1
+$$
+
+---
+
+#### Ejemplo
+
+Tenemos un alfabeto $\mathcal{A}=\{0,1\}$, y queremos encontrar el conjunto de todas las palabras finitas (no nulas, de hasta un máximo de longitud 5) formadas por símbolos de $\mathcal{A}$. ¿Cuántos elementos tiene $\mathcal{A}^+$?
+
+Sin necesidad de construir cada palabra, podemos calcular el número de elementos de $\mathcal{A}^+$ usando la fórmula anterior. Como $|\mathcal{A}|=2$ y $n=5$, el número de elementos de $\mathcal{A}^+$ es
+
+$$
+\begin{align*}
+|\mathcal{A}^+|&=\frac{1-|\mathcal{A}|^{n+1}}{1-|\mathcal{A}|} - 1\\
+&=\frac{1-2^{5+1}}{1-2} - 1\\
+&=\frac{1-64}{-1} - 1\\
+&=62
+\end{align*}
+$$
+
+---
+
+Para cualquier palabra $x\in\mathcal{A}^+$ y $1\leq n\leq|x|$, sea $x[n]=a_n$, el $n$-ésimo símbolo de la secuencia. Por tanto
+
+$$
+x=x[1]\dots x[|x|]
+$$
+
+Dadas dos palabras $x,y\in\mathcal{A}^+$, decimos que $x$ e $y$ son **iguales** si y solo si:
+
+$$
+x = y \Leftrightarrow\begin{cases}
+&\left(|x|=|y|\right)\\
+&\wedge\left(x[i]=y[i], \forall 1\leq i\leq|x|\right)
+\end{cases}
+$$
+
+Es decir, son iguales cuando tienen la misma longitud, y además todos sus símbolos son iguales en la misma posición.
+
+De forma similar, definimos la **concatenación** de dos palabras $x,y\in\mathcal{A}^+$ (que denotaremos como $xy$) como la palabra $z\in\mathcal{A}^+$ definida por
+
+1. $|z| = |x| + |y|$
+2. $z[i] = x[i]$ con $1\leq i\leq|x|$
+3. $z[|x|+i] = y[i]$ con $1\leq i\leq |y|$
+
+Es decir, la concatenación de dos palabras es una nueva palabra que contiene todos los símbolos de la primera palabra seguidos de todos los símbolos de la segunda palabra.
+
+Es sencillo ver que la concatenación de palabras es una operación **asociativa**, es decir, para cualquier $x,y,z\in\mathcal{A}^+$, se cumple que
+
+$$
+(x y) z = x (y z)
+$$
+
+Sin embargo, la concatenación de palabras **no es conmutativa**, es decir, en general no se cumple que
+
+$$
+xy = yx
+$$
+
+_Podéis pensar en esto como si se tratase de "sumar strings" en `python`... Tened cuidado con el sistema de indexación, ya que en `python` los índices empiezan en 0, mientras que aquí los hemos hecho empezar en 1._
+
+---
+
+En muchas ocasiones es conveniente definir un elemento identidad para una operación (en este caso, la concatenación de palabras). La identidad de la concatenación de palabras es la palabra vacía, que denotaremos como $\lambda$ (pensad en el string vacío `""` en `python`). $\lambda$ tiene las siguienets propiedades:
+
+1. $|\lambda| = 0$
+2. $\mathcal{A}^0 = \left\{\lambda\right\}$
+3. $\forall x\in\mathcal{A}^+,\quad x\neq\lambda$
+4. $|x| = 0 \Leftrightarrow x = \lambda$
+
+Es decir, que la palabra vacía es la única palabra de longitud 0, y es la única palabra que no tiene símbolos. Si una palabra tiene longitud 0, entonces es la palabra vacía, y si una palabra no es la palabra vacía, entonces tiene longitud mayor que 0.
+
+De esta manera podemos generar otro conjunto, el cual incluye a la palabra vacía, que denotaremos como $\mathcal{A}^*$ y se define como
+
+$$
+\begin{align*}
+\mathcal{A}^* &= \mathcal{A}^+\cup\left\{\lambda\right\}\\
+&= \mathcal{A}^+\cup\mathcal{A}^0\\
+&= \left(\bigcup_{n\geq1}\mathcal{A}^n\right)\cup\mathcal{A}^0\\
+&= \bigcup_{n\geq0}\mathcal{A}^n
+\end{align*}
+$$
+
+Podemos extender la operación de concatenación de palabras a $\mathcal{A}^*$, de manera que para cualquier $x,y\in\mathcal{A}^*$, se cumplen las propiedades anteriores de la concatenación, y además
+
+$$
+\lambda x = x\lambda = x
+$$
+
+Convirtiéndose de esta manera la concatenación de palabras sobre $\mathcal{A}^*$ en una operación asociativa y con elemento neutro.
+
+---
+
+A partir de la concatenación de palabras es posible definir la **potencia** de una palabra. Dada una palabra $x\in\mathcal{A}^+$ y un número entero no negativo $k$, la potencia de $x$ elevada a $k$, denotada como $x^k$, se define como
+
+1. $x^0=\lambda$
+2. $x^k=x^{k-1}x$
+
+Es decir, la potencia de una palabra es la concatenación de la palabra consigo misma $k$ veces.
+
+---
+
+#### Ejemplo
+
+Dada la palabra $x=010$, calculamos $x^3$ como 
+
+$$
+\begin{align*}
+x^3&=x^2x\\
+&=(xx)x\\
+&=(010010)010\\
+&=010010010
+\end{align*}
+$$
+
+---
+
+Una propiedad que se observa inmediatamente es que $\left|x^k\right|=k\left|x\right|$. Es decir, la longitud de la potencia de una palabra es igual al producto de la longitud de la palabra por el exponente de la potencia.
+
+Además, otra propiedad es que $\forall n>1,\quad x^n = x \Leftrightarrow x = \lambda$. Es decir, que una palabra elevada a un exponente mayor que 1 es igual a la palabra si y solo si la palabra es la palabra vacía.
+
+---
+
+También es posible "_extraer_" trozos de una palabra. Si tenemos una palabra $x\in\mathcal{A}^+$, definimos su segmento $x[i:j]$ como
+
+$$
+x[i:j] =\begin{cases}
+& x[i]\dotsx[j],\quad 1\leq i\leq j\leq|x|\\
+& x[i],\quad 1\leq i = j\leq |x|\\
+& \lambda,\quad\text{en otro caso}
+\end{cases}
+$$
+
+Es decir, que el segmento de una palabra es la subsecuencia de la palabra que va desde el símbolo $i$-ésimo hasta el símbolo $j$-ésimo, ambos incluidos. Si $i=j$, entonces el segmento es simplemente el símbolo $i$-ésimo, y si $i>j$, entonces el segmento es la palabra vacía.
+
+Rápidamente se puede deducir que $x = x[1:|x|]$. Es decir, que una palabra es igual a su segmento que va desde el primer símbolo hasta el último símbolo.
+
+### Órdenes Alfabéticos
+
+Dado un alfabeto $\mathcal{A}$, es posible definir un **orden alfabético** sobre los símbolos de $\mathcal{A}$. Un orden alfabético es una relación de orden dada mediante enumeración (sin repetición) de los símbolos de $\mathcal{A}$. Si $\mathcal{A}=\{a_1,a_2,\dots,a_n\}$, es una enumeración sin repetición, entonces
+
+$$
+a_i < a_j \Leftrightarrow i < j
+$$
+
+Es decir, que el orden alfabético de los símbolos de $\mathcal{A}$ es el orden de dicha enumeración.
+
+---
+
+Este órden alfabético se puede extender a las palabras de $\mathcal{A}^*$ de la siguiente manera. Dadas dos palabras $x,y\in\mathcal{A}^+$, decimos que $x$ es **menor** que $y$ en el orden alfabético si y solo si:
+
+$$
+x < y \Leftrightarrow\begin{cases}
+& \left(\exists u\in\mathcal{A}^+:y=xu\right)\\
+& \vee\left(\exists u,v,w\in\mathcal{A}^*, \exists a,b\in\mathcal{A}:(x=uav
+)\wedge (y=ubw) \wedge (a<b)\right)\\
+\end{cases}
+$$
+
+Es decir, que una palabra es menor que otra en el orden alfabético si y solo si es un prefijo de la otra palabra, o si ambas palabras tienen un prefijo común y el siguiente símbolo de una es menor que el siguiente símbolo de la otra. Nótese que el prefijo común puede ser la palabra vacía ya que $\lambda$ es prefijo de cualquier palabra y $u,v,w\in\mathcal{A}^*$.
+
+Nótese que trivialmente se tienen las siguientes propiedades:
+
+1. $\forall x\in\mathcal{A}^+:\lambda < x$
+2. $\forall x,y\in\mathcal{A}^*:x\neq y \Rightarrow ((x<y)\vee(y<x))$
+3. Sobre cada alfabeto $\mathcal{A}$, pueden definirse $\left|\mathcal{A}\right|!$ órdenes alfabéticos distintos.
+
+---
+
+#### Ejemplo 1
+
+Sean las palabras $x=010$ e $y=011$. ¿Cuál es la relación de orden alfabético entre $x$ e $y$?
+
+Para determinar la relación de orden alfabético entre $x$ e $y$, primero comprobamos si $x$ es prefijo de $y$ o viceversa. En este caso, $x$ no es prefijo de $y$ y $y$ no es prefijo de $x$. Por tanto, comprobamos si tienen un prefijo común. En este caso, el prefijo común es la palabra vacía $\lambda$. Por consiguiente, comprobamos si el siguiente símbolo de $x$ es menor que el siguiente símbolo de $y$. En este caso, el siguiente símbolo de $x$ es 1 y el siguiente símbolo de $y$ es 1. Como 0 es menor que 1, entonces $x < y$ en el orden alfabético.
+
+---
+
+
+### Prefijos, Sufijos y Segmentos
+
+Anteriormente hemos definido el segmento de una palabra de forma breve. Ahora vamos a definir de forma más precisa los conceptos de prefijo, sufijo y segmento, dado que de forma indirecta hemos utilizado estos conceptos en la definición de órdenes alfabéticos.
+
+#### Prefijos
+
+Diremos que para $x,y\in\mathcal{A}^*$ que $x$ es un **prefijo** de $y$ siempre que 
+
+$$
+\exists u\in\mathcal{A}^*:y=xu
+$$
+
+Es decir, que una palabra es prefijo de otra si y solo si la otra palabra es la concatenación de la primera palabra con otra palabra cualquiera. 
+
+Trivialmente, se cumplen las siguientes propiedades:
+
+1. $\forall x\in\mathcal{A}^*:\lambda$ es prefijo de $x$ (la palabra vacía es prefijo de cualquier palabra).
+2. $\forall x\in\mathcal{A}^*:x$ es prefijo de $x$ (una palabra es prefijo de sí misma).
+3. $\forall x,y\in\mathcal{A}^*:x$ es prefijo de $y \Leftrightarrow |x| \leq |y|$ en el orden alfabético (si una palabra es prefijo de otra, entonces su longitud es menor o igual que la longitud de la palabra de la cual es sufijo).
+4. $\forall x,y\in\mathcal{A}^*:x$ es prefijo de $y\Leftrightarrow \exists i: 1\leq i\leq |y| / x=y[1:i]$ (una palabra es prefijo de otra si y solo si es el segmento de la otra palabra que va desde el primer símbolo hasta un símbolo cualquiera).
+5. $\forall x,y\in\mathcal{A}^*:x$ es prefijo de $y\Rightarrow x\leq y$ para cualquier orden alfabético de $\mathcal{A}$ (si una palabra es prefijo de otra, entonces es menor o igual que la otra palabra en el orden alfabético).
+
+#### Sufijos
+
+Los sufijos se definen de forma similar a los prefijos. Diremos que para $x,y\in\mathcal{A}^*$ que $x$ es un **sufijo** de $y$ siempre que
+
+$$
+\exists u\in\mathcal{A}^*:y=ux
+$$
+
+Nuevamente, se cumplen una serie de propiedades (muy similares a las de los prefijos):
+
+1. $\forall x\in\mathcal{A}^*:\lambda$ es sufijo de $x$ (la palabra vacía es sufijo de cualquier palabra).
+2. $\forall x\in\mathcal{A}^*:x$ es sufijo de $x$ (una palabra es sufijo de sí misma).
+3. $\forall x,y\in\mathcal{A}^*:x$ es sufijo de $y \Leftrightarrow |x| \leq |y|$ en el orden alfabético (si una palabra es sufijo de otra, entonces su longitud es menor o igual que la longitud de la palabra de la cual es sufijo).
+4. $\forall x,y\in\mathcal{A}^*:x$ es sufijo de $y\Leftrightarrow \exists i: 1\leq i\leq |y| / x=y[i:|y|]$ (una palabra es sufijo de otra si y solo si es el segmento de la otra palabra que va desde un símbolo cualquiera hasta el último símbolo).
+
+De los sufijos no se puede deducir ninguna propiedad relacionada con el orden alfabético, ya que no existe una relación directa entre los sufijos y los órdenes alfabéticos.
+
+#### Segmentos
+
+A continuación daremos una definición más precisa de segmento. Dadas dos palabras $x,y\in\mathcal{A}^*$, diremos que $x$ es un **segmento** de $y$ siempre que
+
+$$
+\exists u,v\in\mathcal{A}^*:y=uxv
+$$
+
+Podemos ver que si $u=\lambda$, entonces $x$ es un prefijo de $y$, y si $v=\lambda$, entonces $x$ es un sufijo de $y$. Por tanto, los segmentos son una generalización de los prefijos y sufijos. Trivialmente, si tanto $u$ como $v$ son la palabra vacía, entonces $x=y$. De forma similar, se tienen las siguientes propiedades:
+
+1. $\forall x\in\mathcal{A}^*:\lambda$ es segmento de $x$ (la palabra vacía es segmento de cualquier palabra).
+2. $\forall x\in\mathcal{A}^*:x$ es segmento de $x$ (una palabra es segmento de sí misma).
+3. $\forall x,y\in\mathcal{A}^*:x$ es segmento de $y \Leftrightarrow |x| \leq |y|$ (si una palabra es segmento de otra, entonces su longitud es menor o igual que la longitud de la palabra de la cual es sufijo).
+4. $\forall x,y\in\mathcal{A}^*:x$ es segmento de $y\Leftrightarrow \exists i,j: 1\leq i\leq j\leq |y| / x=y[i:j]$ (una palabra es segmento de otra si y solo si es el segmento de la otra palabra que va desde un símbolo cualquiera hasta otro símbolo cualquiera). Esta es la definición que hemos utilizado anteriormente.
+
+### Homomorfismos
+
+Sean dos alfabetos $\mathcal{A}$ y $\mathcal{B}$ (no necesariamente distintos), entonces una aplicación 
+
+$$
+h:\mathcal{A}^*\rightarrow\mathcal{B}^*
+$$
+
+es un homomorfismo siempre que
+
+$$
+\forall x,y\in\mathcal{A}^*:h(xy)=h(x)h(y)
+$$
+
+Es decir, los homomorfismos preservan las operaciones de concatenación de palabras; y por ende preservan la estructura de las palabras. En consecuencia, $\mathcal{B}^*$ queda totalmente determinado por $\mathcal{A}^*$ y el homomorfismo $h$ sobre cada elemento de $\mathcal{A}$.
+
+Una propiedad importante es que $h(\lambda)=\lambda$, es decir, que el homomorfismo de la palabra vacía es la palabra vacía.
+
+Los homomorfismos son una herramienta muy útil para estudiar la estructura de las palabras, ya que permiten transformar palabras de un alfabeto a otro manteniendo la estructura de las palabras. Por ejemplo, si tenemos un homomorfismo $h$ que transforma las vocales de un alfabeto a las consonantes de otro alfabeto, entonces podemos transformar palabras de un alfabeto a otro manteniendo la estructura de las palabras.
+
+### Permutaciones circulares por la izquierda
+
+Sean $a\in\mathcal{A}$, $x,y\in\mathcal{A}^*$ y $x = ay$, entonces se define la operación de **permutación circular por la izquierda**, denotada por $\hookrightarrow$, sobre $x$ como
+
+$$
+\hookrightarrow(x) = ya
+$$
+
+Entonces,
+
+1. $\forall x\in\mathcal{A}^+:\hookrightarrow(x)=x[2:|x|]x[1]$
+2. En particular, si $|x| = 1$, entonces $\hookrightarrow(x) = x$.
+
+Es más, la aplicación reiterada de la permutación circular por la izquierda sobre una palabra $x$ genera un ciclo, de tal forma que aplicada $|x|$ veces, se obtiene la palabra original $x$. Esto se denota como $\hookrightarrow^{|x|}(x) = x$.
+
+### Secuencias de palabras y ordenaciones
+
+Sea $\boldsymbol{x} = \left\langle x_1,x_2,\dots,x_n\right\rangle$ una secuencia de palabras $x_i\in\mathcal{A}^*,i=1,\dots,n$, y supóngase una ordenación alfabética sobre $\mathcal{A}^*$ (como hemos explicaod anteriormente). Entonces se define la secuencia ordenada $\boldsymbol{z}$
+
+$$
+\boldsymbol{z} = \text{ord}\left(\boldsymbol{x}\right)
+$$
+
+es una permutación de $\boldsymbol{x}$ tal que
+
+$$
+\boldsymbol{z} = \left\langle x_1',x_2',\dots,x_n'\right\rangle
+$$
+
+donde se cumple que $x_i' \leq x_j'$ para cualquier $i,j=1,\dots,n$.
+
+Para $\boldsymbol{x}$, denotamos su componente $i$-ésima como $x(i)$, con $1\leq i\leq n$.

@@ -3,8 +3,9 @@
 ## Índice
 
 1. [Introducción](#introducción)
-2. [Entropía](./entropia/README.md)
-
+2. [Entropía](./2-entropia/README.md)
+3. [Estructura del lenguaje](./3-estructura_lenguaje/README.md)
+4. [Fuentes de Información](./4-fuentes_informacion/README.md)
 
 ## Introducción
 

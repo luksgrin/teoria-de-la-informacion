@@ -313,3 +313,73 @@ H(X,Y) &= -\sum_{x\in S_X}\sum_{y\in S_Y} P(X=x,Y=y)\log\left(P(X=x,Y=y)\right) 
 $$
 
 De la misma manera, se puede demostrar que $H(X,Y) = H(Y) + H(X|Y)$.
+
+De este resultado se puede demostrar que dadas las variables aleatorias $X$ e $Y$:
+
+1. $H(X,Y) \leq H(X) + H(Y)$
+2. $H(X,Y) = H(X) + H(Y)$, (en caso de que $X$ e $Y$ sean independientes)
+
+_Una forma sencilla de pensar sobre estas propiedades es pensar en las probabilidades conjuntas y condicionales, de las cuales obtenemos desigualdades similares, solamente que en el caso de la entropía, debido al logaritmo, las desigualdades no son productos si no sumas._
+
+Un corolario de las propiedades anteriores es que:
+
+1. $H(X|Y) \leq H(X)$
+2. $H(X|Y) = H(X)$, (en caso de que $X$ e $Y$ sean independientes)
+
+----
+
+Volviendo a la regla de la cadena, esta la podemos extender para el caso de más de dos variables, y se define como:
+
+$$
+H(X_1,X_2,\dots,X_n) = H(X_1) + H(X_2|X_1) + H(X_3|X_1,X_2) + \dots + H(X_n|X_1,X_2,\dots,X_{n-1})
+$$
+
+o de forma más compacta:
+
+$$
+H(X_1,X_2,\dots,X_n) = \sum_{i=1}^n H(X_i|X_1,X_2,\dots,X_{i-1})
+$$
+
+#### Entropía Relativa
+
+La entropía relativa, también conocida como divergencia de Kullback-Leibler, es una medida de la diferencia entre dos distribuciones de probabilidad (la cantidad de información que se necesita para describir una distribución de probabilidad utilizando otra distribución de probabilidad). La entropía relativa de dos distribuciones de probabilidad $P$ y $Q$ se denota como $D(P||Q)$, y se calcula de la siguiente manera:
+
+$$
+D(P||Q) = \sum_{x\in S} P(x)\log\left(\frac{P(x)}{Q(x)}\right)
+$$
+
+O para distribuciones de probabilidad continuas:
+
+$$
+D(P||Q) = \int_{-\infty}^{\infty} f(x)\log\left(\frac{f(x)}{g(x)}\right)dx
+$$
+
+La entropía relativa es siempre **no negativa**, y es igual a cero si y solo si $P$ y $Q$ son iguales.
+
+#### Información Mutua
+
+La información mutua de dos variables aleatorias $X$ e $Y$ es una medida de la cantidad de información que una variable aleatoria proporciona sobre la otra variable aleatoria. La información mutua de $X$ e $Y$ se denota como $I(X;Y)$, y se calcula de la siguiente manera:
+
+$$
+I(X;Y) = \sum_{x\in S_X}\sum_{y\in S_Y} P(X=x,Y=y)\log\left(\frac{P(X=x,Y=y)}{P(X=x)P(Y=y)}\right)
+$$
+
+O para variables aleatorias continuas:
+
+$$
+I(X;Y) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(x,y)\log\left(\frac{f(x,y)}{f(x)f(y)}\right)dxdy
+$$
+
+La información mutua es siempre **no negativa**, y es igual a cero si y solo si $X$ e $Y$ son independientes. Se puede pensar también que la información mutua es la entropía relativa entre la distribución conjunta de dos variables aleatorias y el producto de sus distribuciones marginales.
+
+De la definición de la información mutua se pueden deducir las siguientes propiedades:
+
+1. $I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X)$
+2. $I(X;Y) = H(X) + H(Y) - H(X,Y)$
+3. $I(X;Y) = I(Y;X)$
+4. $I(X;X) = H(X)$
+
+Gráficamente, estas propiedades se pueden representar de la siguiente manera:
+
+![Mutual information](./img/mutual_information_relation_diagram.svg)
+
