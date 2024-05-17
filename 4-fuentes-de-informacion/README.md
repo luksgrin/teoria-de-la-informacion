@@ -174,3 +174,185 @@ H(\mathcal{S}) &= \sum_{\mathcal{S}^m}p(s_{i_1},\dots,s_{i_m})H(\mathcal{S}|s_{i
 &= -\sum_{\mathcal{S}^{m+1}}p(s_{i_1},\dots,s_{i_m},s_i)\log\left(p(s_i|s_{i_1},\dots,s_{i_m})\right)\\
 \end{align*}
 $$
+
+#### Ejemplo
+
+Tomemos una fuente de Markov de orden 2 definida por la siguientees probabilidades condicionales:
+
+
+| $s_js_ks_i$ | $P(s_i|s_js_k)$ |
+|:-----------:|:---------------:|
+| 000         | 0.8             |
+| 001         | 0.2             |
+| 010         | 0.5             |
+| 011         | 0.5             |
+| 100         | 0.5             |
+| 101         | 0.5             |
+| 110         | 0.2             |
+| 111         | 0.8             |
+
+Podemos calcular las probabilidades en estado estacionario:
+
+$$
+\begin{align*}
+P(00) &= P(0|00)\cdot P(00) + P(0|10)\cdot P(10)\\
+P(01) &= P(1|00)\cdot P(00) + P(1|10)\cdot P(10)\\
+P(10) &= P(0|01)\cdot P(01) + P(0|11)\cdot P(11)\\
+1 &= P(00) + P(01) + P(10) + P(11)
+\end{align*}
+$$
+
+Reescribamos el sistema de ecuaciones para luego poder pasarlo a un sistema matricial:
+
+$$
+\begin{align*}
+\left(P(0|00) - 1\right)\cdot P(00) + P(0|10)\cdot P(10) &= 0\\
+P(1|00)\cdot P(00) + P(1|10)\cdot P(10) - P(01)&= 0\\
+P(0|01)\cdot P(01) + P(0|11)\cdot P(11) - P(10)&= 0\\
+P(00) + P(01) + P(10) + P(11) &= 1
+\end{align*}
+$$
+
+Esto se convierte al sistema matricial:
+
+$$
+\begin{pmatrix}
+P(0|00) - 1 & 0 & P(0|10) & 0\\
+P(1|00) & -1 &P(1|10) & 0\\
+0 & P(0|01) & -1 & P(0|11)\\
+1 & 1 & 1 & 1
+\end{pmatrix}\begin{pmatrix}
+P(00)\\
+P(01)\\
+P(10)\\
+P(11)
+\end{pmatrix} = \begin{pmatrix}
+0\\
+0\\
+0\\
+1
+\end{pmatrix}
+$$
+
+Sustituyendo los valores de las probabilidades condicionales, obtenemos:
+
+$$
+\begin{pmatrix}
+-0.2 & 0 & 0.5 & 0\\
+0.2 & -1 & 0.5 & 0\\
+0 & 0.5 & -1 & 0.2\\
+1 & 1 & 1 & 1
+\end{pmatrix}\begin{pmatrix}
+P(00)\\
+P(01)\\
+P(10)\\
+P(11)
+\end{pmatrix} = \begin{pmatrix}
+0\\
+0\\
+0\\
+1
+\end{pmatrix}
+$$
+
+Resolviendo el sistema de ecuaciones, mediante la inversa de la matriz de coeficientes, obtenemos:
+
+$$
+\begin{pmatrix}
+P(00)\\
+P(01)\\
+P(10)\\
+P(11)
+\end{pmatrix} = \begin{pmatrix}
+-0.2 & 0 & 0.5 & 0\\
+0.2 & -1 & 0.5 & 0\\
+0 & 0.5 & -1 & 0.2\\
+1 & 1 & 1 & 1
+\end{pmatrix}^{-1}\begin{pmatrix}
+0\\
+0\\
+0\\
+1
+\end{pmatrix}
+= \begin{pmatrix}
+\frac{5}{14}\\
+\frac{2}{14}\\
+\frac{2}{14}\\
+\frac{5}{14}
+\end{pmatrix}
+$$
+
+Así que podemos rellenar la tabla de probabilidades de estados en régimen estacionario:
+
+| $s_js_ks_i$ | $P(s_i|s_js_k)$ | $P(s_js_k)$ |
+|:-----------:|:---------------:|:-----------:|
+| 000         | 0.8             | 5/14        |
+| 001         | 0.2             | 5/14        |
+| 010         | 0.5             | 2/14        |
+| 011         | 0.5             | 2/14        |
+| 100         | 0.5             | 2/14        |
+| 101         | 0.5             | 2/14        |
+| 110         | 0.2             | 5/14        |
+| 111         | 0.8             | 5/14        |
+
+El siguiente paso es calcular la probabilidad conjunta de cada estado, es decir $P(s_i,s_j,s_k)$, sabiendo que $P(s_i,s_j,s_k) = P(s_i|s_j,s_k)\cdot P(s_j,s_k)$:
+
+| $s_js_ks_i$ | $P(s_i|s_j,s_k)$ | $P(s_j,s_k)$ | $P(s_i,s_j,s_k)$ |
+|:-----------:|:---------------:|:-----------:|:---------------:|
+| 000         | 0.8             | 5/14        | 4/14            |
+| 001         | 0.2             | 5/14        | 1/14            |
+| 010         | 0.5             | 2/14        | 1/14            |
+| 011         | 0.5             | 2/14        | 1/14            |
+| 100         | 0.5             | 2/14        | 1/14            |
+| 101         | 0.5             | 2/14        | 1/14            |
+| 110         | 0.2             | 5/14        | 1/14            |
+| 111         | 0.8             | 5/14        | 4/14            |
+
+Finalmente, podemos calcular la entropía de la fuente de Markov de orden 2:
+
+$$
+\begin{align*}
+H(\mathcal{S}) &= -\sum_{\mathcal{S}^3}P(s_i,s_j,s_k)\log\left(P(s_i|s_j,s_k)\right)\\
+&= -\left(2\cdot\frac{4}{14}\log\left(0.8\right)+2\cdot\frac{1}{14}\log\left(0.2\right)+4\cdot\frac{1}{14}\log\left(0.5\right)\right)\\
+&\approx 0.8
+\end{align*}
+$$
+
+### Fuentes de Bernoulli y Binomiales
+
+Sea la fuente $\left(\mathcal{S},P\right)$ donde $\mathcal{S}=\left\{x_1,x_2,\dots,x_n\right\}$ y $p(x_i)=p_i$ y supongamos que tomamos una secuencia $X_1,X_2,\dots,X_n$ de valores independientes.
+
+_¿Qué frecuencia de aparición del elemento $x_i$ esperamos en la secuencia?_
+
+- Cada valor de la secuencia es una prueba de Bernoulli, donde si $X_q = x_i$ tenemos un éxito y si $X_q\neq x_i$ tenemos un fracaso (la probabilidad de éxito es $p_i$).
+- El número de éxitos en la secuencia es una variable aleatoria $\mathcal{S}_i$ que sigue una distribución binomial con
+
+$$
+P(\mathcal{S}_i=k) = \binom{n}{k}p_i^k(1-p_i)^{n-k}
+$$
+
+con una media $\mu_i = np_i$ y una varianza $\sigma_i^2 = np_i(1-p_i)$.
+
+Podemos usar la desigualdad de Chebyshev para acotar la probabilidad de que la variable aleatoria se aleje de su media:
+
+$$
+P\left(\left|\frac{\mathcal{S}_i-\mu_i}{\sigma_i}\right|\geq k\right)\leq\frac{1}{k^2}
+$$
+
+Sea la fuente de información $\left(\mathcal{S},P\right)$ con $\mathcal{S}=\left\{x_1,x_2,\dots,x_n\right\}$ y $p(x_i)=p_i$, y supongamos que tomamos una secuencia $\alpha = \left\langle\alpha_1,\alpha_2,\dots,\alpha_n\right\rangle$ de valores independientes. Diremos que $\alpha$ es una secuencia $k$-típica si se cumple que´
+
+$$
+\forall i: 1\leq i\leq n, \left|\frac{\mathcal{S}_i-\mu_i}{\sigma_i}\right|\leq k
+$$
+
+que en el caso de la distribución binomial se traduce en
+
+$$
+\forall i: 1\leq i\leq n, \left|\frac{\mathcal{S}_i-np_i}{\sqrt{np_i(1-p_i)}}\right|\leq k
+$$
+
+lo cual significa que en la secuencia $\alpha$ la frecuencia de aparición de cada símbolo $x_i$ está dentro de un rango de $k$ desviaciones estándar de la media.
+
+Hay una relación entre las secuencias $k$-típicas y la entropía de la fuente de información. Si $n$ es suficientemente grande, entonces la probabilidad de que una secuencia aleatoria de longitud $n$ sea $k$-típica es muy cercana a 1. Por lo tanto, la entropía de la fuente de información se puede aproximar mediante la entropía de las secuencias $k$-típicas.
+
+El número de secuencias $k$-típicas de longitud $n$ es igual a $m^{nH_m(X)}$.

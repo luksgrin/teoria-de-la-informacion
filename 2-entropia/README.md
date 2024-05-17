@@ -383,3 +383,47 @@ Gráficamente, estas propiedades se pueden representar de la siguiente manera:
 
 ![Mutual information](./img/mutual_information_relation_diagram.svg)
 
+#### El caso contínuo
+
+#### Ejemplo 1: Distribución uniforme
+
+Sea la variable aleatoria $X$ uniformemente distribuída entre $0$ y $a$. Su función de densidad de probabilidad es
+
+$$
+f(x)=\begin{cases}
+\frac{1}{a}\quad\text{si }x\in\left[0,a\right]\\
+0\quad\text{en caso contrario}
+\end{cases}
+$$
+
+Su entropía es
+
+$$
+\begin{align*}
+H(X) &= -\int_{-\infty}^\infty f(x)\log\left(f(x)\right)dx\\
+&= -\int_{-\infty}^0 0\log(0)dx - \int_0^a \frac{1}{a}\log\left(\frac{1}{a}\right)dx - \int_0^{\infty} 0\log(0)dx\\
+&= \int_0^a \frac{1}{a}\log(a)dx\\
+&= \left[\frac{x}{a}\log(a)\right]_0^a\\
+&= \log(a)
+\end{align*}
+$$
+
+#### Ejemplo 2: Distribución normal
+
+Sea la variable aleatoria $X$ con función de densidad de probabilidad
+
+$$
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}
+$$
+
+_(es decir una distribución normal con media $\mu$ y varianza $\sigma^2$)_
+
+Su entropía es
+
+$$
+\begin{align*}
+H(X) &= -\int_{-\infty}^\infty f(x)\log\left(f(x)\right)dx\\
+&= -\int_{-\infty}^\infty \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\log\left(\frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\right)dx\\
+&= \frac{-1}{\sigma\sqrt{2\pi}}\int_{-\infty}^\infty e^{\frac{-(x-\mu)^2}{2\sigma^2}}\left(\frac{-(x-\mu)^2}{2\sigma^2\log(e)} - \log\left(\sigma\sqrt{2\pi}\right)\right)dx\\
+\end{align*}
+$$
