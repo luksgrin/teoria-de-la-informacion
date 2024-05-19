@@ -587,3 +587,58 @@ manera:
 \centering
 \includesvg[width=\linewidth]{./img/mutual_information_relation_diagram.svg}
 \end{figure}
+
+
+\paragraph{El caso contínuo}\label{el-caso-contuxednuo}
+
+\paragraph{Ejemplo 1: Distribución
+uniforme}\label{ejemplo-1-distribuciuxf3n-uniforme}
+
+Sea la variable aleatoria \(X\) uniformemente distribuída entre \(0\) y
+\(a\). Su función de densidad de probabilidad es
+
+\[
+f(x)=\begin{cases}
+\frac{1}{a}\quad\text{si }x\in\left[0,a\right]\\
+0\quad\text{en caso contrario}
+\end{cases}
+\]
+
+Su entropía es
+
+\begin{align*}
+H(X) &= -\int_{-\infty}^\infty f(x)\log\left(f(x)\right)dx\\
+&= -\int_{-\infty}^0 0\log(0)dx - \int_0^a \frac{1}{a}\log\left(\frac{1}{a}\right)dx - \int_0^{\infty} 0\log(0)dx\\
+&= \int_0^a \frac{1}{a}\log(a)dx\\
+&= \left[\frac{x}{a}\log(a)\right]_0^a\\
+&= \log(a)
+\end{align*}
+
+
+\paragraph{Ejemplo 2: Distribución
+normal}\label{ejemplo-2-distribuciuxf3n-normal}
+
+Sea la variable aleatoria \(X\) con función de densidad de probabilidad
+
+\[
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}
+\]
+
+\emph{(es decir una distribución normal con media \(\mu\) y varianza
+\(\sigma^2\))}
+
+Su entropía es
+
+
+\begin{align*}
+H(X) &= -\int_{-\infty}^\infty f(x)\log\left(f(x)\right)dx\\
+&= -\int_{-\infty}^\infty \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\log\left(\frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\right)dx\\
+&= -\int_{-\infty}^\infty \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\left(-\log\left(\sigma\sqrt{2\pi}\right)+\frac{-\log\left(e\right)(x-\mu)^2}{2\sigma^2}\right)dx\\
+&= -\left(-\log\left(\sigma\sqrt{2\pi}\right)\int_{-\infty}^\infty \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}} + \int_{-\infty}^\infty \frac{-\log\left(e\right)(x-\mu)^2}{2\sigma^3\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\right)dx\\
+&= -\left(-\log\left(\sigma\sqrt{2\pi}\right)\cdot 1 - \frac{\log\left(e\right)}{2\sigma^2}\int_{-\infty}^\infty \frac{(x-\mu)^2}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\right)dx\\
+&= \log\left(\sigma\sqrt{2\pi}\right) + \frac{\log\left(e\right)}{2\sigma^2}\left(\sigma^2\right)\\
+&= \log\left(\sigma\sqrt{2\pi}\right) + \frac{\log\left(e\right)}{2}\\
+&= \log\left(\sigma\sqrt{2\pi}\right) + \log\left(\sqrt{e}\right)\\
+&= \log\left(\sigma\sqrt{2\pi e}\right)\\
+\end{align*}
+

@@ -94,7 +94,7 @@ $$
 y además consideremos la codificación de bloque definida por $f$:
 
 $$
-f(a) = 
+f(a) = \left(\left\lfloor\frac{a_1}{2^0}\right\rfloor\right)\left(\left\lfloor\frac{a_2}{2^1}\right\rfloor\right)\left(\left\lfloor\frac{a_3}{2^2}\right\rfloor\right)\left(\left\lfloor\frac{a_4}{2^3}\right\rfloor\right)
 $$
 
 claramente tenemos que 
@@ -103,7 +103,7 @@ $$
 f(\mathcal{A}) = \left\{0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001\right\}
 $$
 
-Claramente vemos que $f(\mathcal{A})\subset\mathcal{B}^4$ (porque hay palabras en $\mathcal{B}^4$ que no aparecen en $f(\mathcal{A})$, como por ejemplo $1111$). $f$ es una codificación de bloque ya que le asigna a cada caracter del alfabeto fuente, una palabra formada por el alfabeto código.
+Se puede ver que $f(\mathcal{A})\subset\mathcal{B}^4$ (porque hay palabras en $\mathcal{B}^4$ que no aparecen en $f(\mathcal{A})$, como por ejemplo $1111$). $f$ es una codificación de bloque ya que le asigna a cada caracter del alfabeto fuente, una palabra formada por el alfabeto código.
 
 #### Ejemplo 2: Morse
 
@@ -200,7 +200,7 @@ $$
 se define como
 
 $$
-f^{(n)}:\left(\mathcal{A}^n)^+\rightarrow\mathcal{B}^+
+f^{(n)}:\left(\mathcal{A}^n\right)^+\rightarrow\mathcal{B}^+
 $$
 
 tomando como símbolos las palabras de $\mathcal{A}^n$ de forma que
