@@ -93,7 +93,7 @@ ellos.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\paragraph{Ejemplos}\label{ejemplos}
+\paragraph{Ejemplos}\label{ejemplos-fuentes-de-informacion}
 
 A partir de un alfabeto binario \(\left\{0,1\right\}\), se puede definir
 una fuente de Markov de orden 2 con los siguientes estados y
@@ -109,8 +109,6 @@ probabilidades condicionales:
   \(P(0|01)=P(1|10)=P(0|10)=P(1|01)=0.5\)
 \end{itemize}
 
-\pagebreak
-
 El diagrama de estados es el siguiente:
 
 \begin{figure}[htbp!]
@@ -125,7 +123,7 @@ cualquier estado a cualquier otro estado en un número finito de pasos.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\paragraph{Ejemplo}\label{ejemplo}
+\paragraph{Ejemplo}\label{ejemplo-fuentes-de-informacion}
 
 Una fuente ergódica podría ser la anterior (podemos alcanzar cualquier
 estado en un número finito de pasos a partir de otro estado).
@@ -153,7 +151,7 @@ transición.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\paragraph{Ejemplo}\label{ejemplo-1}
+\paragraph{Ejemplo}\label{ejemplo-1-fuentes-de-informacion}
 
 Volviendo al ejemplo inicial, la matriz de probabilidades tiene la
 siguiente forma:
@@ -161,7 +159,7 @@ siguiente forma:
 \[
 \Pi = \begin{matrix}
 & \begin{matrix} 00 & 01 & 10 & 11 \end{matrix} \\
-\begin{matrix} 00 \\ 01 \\ 10 \\ 11 \end{matrix} & \begin{pmatrix} 0.7 & 0.5 & 0.5 & 0.3 \\ 0.5 & 0.5 & 0.5 & 0.5 \\ 0.5 & 0.5 & 0.5 & 0.5 \\ 0.3 & 0.5 & 0.5 & 0.7 \end{pmatrix}
+\begin{matrix} 00 \\ 01 \\ 10 \\ 11 \end{matrix} & \begin{pmatrix} 0.7 & 0.5 & 0.5 & 0.3 \\ 0 & 0 & 0.5 & 0.5 \\ 0.5 & 0.5 & 0 & 0 \\ 0.3 & 0.5 & 0.5 & 0.7 \end{pmatrix}
 \end{matrix}
 \]
 
@@ -175,7 +173,7 @@ Para ello, nos definimos las siguientes ecuaciones:
 
 \begin{align*}
 &P(00) = P(0|00)\cdot P(00) + P(0|10)\cdot P(10)\\
-&P(01) = P(1|00)\cdot P(00) + P(0|10)\cdot P(10)\\
+&P(01) = P(1|00)\cdot P(00) + P(1|10)\cdot P(10)\\
 &P(11) = P(1|01)\cdot P(01) + P(1|11)\cdot P(11)\\
 &P(00) + P(01) + P(10) + P(11) = 1
 \end{align*}
@@ -225,7 +223,7 @@ que la fuente de Markov.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\paragraph{Ejemplo}\label{ejemplo-2}
+\paragraph{Ejemplo}\label{ejemplo-2-fuentes-de-informacion}
 
 Para el ejemplo de la fuente de Markov de orden 2, la fuente afín sería
 la fuente de memoria nula con \(\mathcal{S}=\left\{0,1\right\}\) y

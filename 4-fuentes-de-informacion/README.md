@@ -101,7 +101,7 @@ Volviendo al ejemplo inicial, la matriz de probabilidades tiene la siguiente for
 $$
 \Pi = \begin{matrix}
 & \begin{matrix} 00 & 01 & 10 & 11 \end{matrix} \\
-\begin{matrix} 00 \\ 01 \\ 10 \\ 11 \end{matrix} & \begin{pmatrix} 0.7 & 0.5 & 0.5 & 0.3 \\ 0.5 & 0.5 & 0.5 & 0.5 \\ 0.5 & 0.5 & 0.5 & 0.5 \\ 0.3 & 0.5 & 0.5 & 0.7 \end{pmatrix}
+\begin{matrix} 00 \\ 01 \\ 10 \\ 11 \end{matrix} & \begin{pmatrix} 0.7 & 0.5 & 0.5 & 0.3 \\ 0 & 0 & 0.5 & 0.5 \\ 0.5 & 0.5 & 0 & 0 \\ 0.3 & 0.5 & 0.5 & 0.7 \end{pmatrix}
 \end{matrix}
 $$
 
@@ -112,7 +112,7 @@ Vayamos al cálculo de probabilidades de estados en régimen estacionario. Para 
 $$
 \begin{align*}
 &P(00) = P(0|00)\cdot P(00) + P(0|10)\cdot P(10)\\
-&P(01) = P(1|00)\cdot P(00) + P(0|10)\cdot P(10)\\
+&P(01) = P(1|00)\cdot P(00) + P(1|10)\cdot P(10)\\
 &P(11) = P(1|01)\cdot P(01) + P(1|11)\cdot P(11)\\
 &P(00) + P(01) + P(10) + P(11) = 1
 \end{align*}
