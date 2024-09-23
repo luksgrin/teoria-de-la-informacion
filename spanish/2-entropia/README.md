@@ -7,10 +7,10 @@
 Una variable aleatoria es una función que asigna un valor numérico a cada resultado de un experimento aleatorio. Por ejemplo, si lanzamos un dado, la variable aleatoria $X$ que representa el número que sale en la cara superior del dado, puede tomar los valores $1, 2, 3, 4, 5, 6$. En ese caso escribiríamos que
 
 $$
-X = \{1,2,3,4,5,6\}
+X = \\{1,2,3,4,5,6\\}
 $$
 
-Osea, $X$ es una variable aleatoria que toma valores en el conjunto $\{1,2,3,4,5,6\}$.
+Osea, $X$ es una variable aleatoria que toma valores en el conjunto $\\{1,2,3,4,5,6\\}$.
 
 En el ejemplo anterior, la variable aleatoria $X$ es discreta, porque toma valores en un conjunto finito o numerable (recuerda, hay infinitos más grandes que otros. Un infinito numerable es aquel que se puede poner en correspondencia con los números naturales $\mathbb{N}$). Pero también hay variables aleatorias continuas, que toman valores en un intervalo de números reales. Por ejemplo, si medimos la altura de una persona, la variable aleatoria que representa la altura puede tomar cualquier valor en el intervalo $(0,\infty)$.
 
@@ -32,7 +32,7 @@ Para una variable aleatoria discreta, la función de probabilidad se puede repre
 O mediante la siguiente fórmula:
 
 $$
-P(X=x) = \frac{1}{6} \quad \text{para } x \in \{1,2,3,4,5,6\}
+P(X=x) = \frac{1}{6} \quad \text{para } x \in \\{1,2,3,4,5,6\\}
 $$
 
 Para una variable aleatoria continua, la función de probabilidad se puede representar mediante una función de densidad de probabilidad. Por ejemplo, si medimos la altura de una persona, la función de densidad de probabilidad de la variable aleatoria que representa la altura, es una función que asigna a cada valor del intervalo $(0,\infty)$ la probabilidad de que la altura de una persona esté en ese intervalo.
@@ -129,7 +129,7 @@ Debido a las propiedades del logaritmo, $H_k(X)$ admite las siguientes definicio
 - $H_k(X) = -\sum_{i=0}^n\log_k\left(P(X=x_i)\right)\cdot P(X=x_i) $
 - $H_k(X) = \sum_{i=0}^n \log_k\left(\frac{1}{P(X=x_i)}\right)P(X=x_i)$
 
-Además, debido a las propiedades del logaritmo (en particular que $\log_a(b)=\frac{\log_c(b)}{\log_c(a)}$), se cumple que $H_b(X)=\log_b(a)\cdot H_a(X)$. La demostración es sencilla:
+Además, debido a las propiedades del logaritmo (en particular que $\quad\log_a(b)=\frac{\log_c(b)}{\log_c(a)}\quad$), se cumple que $H_b(X)=\log_b(a)\cdot H_a(X)$. La demostración es sencilla:
 
 $$
 \begin{align*}
@@ -147,7 +147,7 @@ $$
 
 #### Ejemplo 1: Entropía de una variable aleatoria discreta
 
-_Sea el alfabeto $S=\left\{a,b,c,d\right\}$ con una distribución de probabilidades $P=\left\{\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{8}\right\}$. La entropía de la variable aleatoria $X$ definida por el alfabeto $S$ y la distribución de probabilidad $P$ es:_
+_Sea el alfabeto_ $S=\left\\{a,b,c,d\right\\}$ _con una distribución de probabilidades_ $P=\left\\{\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{8}\right\\}$. _La entropía de la variable aleatoria_ $X$ _definida por el alfabeto_ $S$ _y la distribución de probabilidad_ $P$ _es:_
 
 $$
 H(X) = -\left(\frac{1}{2}\log\left(\frac{1}{2}\right) + \frac{1}{4}\log\left(\frac{1}{4}\right) + \frac{1}{8}\log\left(\frac{1}{8}\right) + \frac{1}{8}\log\left(\frac{1}{8}\right)\right) = 1.75
@@ -157,7 +157,7 @@ La entropia de la variable aleatoria $X$ es 1.75 bits.
 
 ----
 
-Una propiedad interesante de la entropía es la siguiente: sea $X$ una variable aleatoria sobre el alfabeto $\left\{x_1,x_2,\dots,x_n\right\}$, entonces:
+Una propiedad interesante de la entropía es la siguiente: sea $X$ una variable aleatoria sobre el alfabeto $\left\\{x_1,x_2,\dots,x_n\right\\}$, entonces:
 
 $$
 0 \leq H(X) \leq \log(n)
@@ -169,13 +169,13 @@ La entropía de una variable aleatoria $X$ está acotada por $0$ y $\log(n)$, do
 
 #### Ejemplo 2: Entropía de una variable aleatoria distribuida bernoulli
 
-_Sea $X$ una variable aleatoria distribuida Bernoulli con parámetro $p$ (es decir, $X\sim\text{Bernoulli}(p)$, lo cual quiere decir que nuestra variable aleatoria mide "el número de éxitos en un experimento de Bernoulli"). La función de probabilidad de $X$ es:_
+_Sea_ $X$ _una variable aleatoria distribuida Bernoulli con parámetro_ $p$ _(es decir,_ $X\sim\text{Bernoulli}(p)$, _lo cual quiere decir que nuestra variable aleatoria mide "el número de éxitos en un experimento de Bernoulli"). La función de probabilidad de_ $X$ _es:_
 
 $$
-P(X=x) = p^x(1-p)^{1-x} \quad \text{para } x\in\{0,1\}
+P(X=x) = p^x(1-p)^{1-x} \quad \text{para } x\in\\{0,1\\}
 $$
 
-_La entropía de la variable aleatoria $X$ es:_
+_La entropía de la variable aleatoria_ $X$ _es:_
 
 $$
 \begin{align*}
@@ -191,7 +191,8 @@ Si representamos la entropía de la variable aleatoria $X$ en función de $p$, o
 
 _¿Qué interpretación tiene esto?_ La entropía de una variable aleatoria Bernoulli es máxima cuando $p=0.5$, es decir, cuando la distribución de probabilidad es uniforme. Esto tiene sentido, porque en una distribución uniforme, todos los valores del alfabeto tienen la misma probabilidad de ocurrir, y por lo tanto hay más incertidumbre sobre el valor que tomará la variable aleatoria. Por otro lado, la entropía de una variable aleatoria Bernoulli es mínima cuando $p=0$ o $p=1$, es decir, cuando la distribución de probabilidad es degenerada. Esto también tiene sentido, porque en una distribución degenerada, solo un valor del alfabeto tiene probabilidad 1 y el resto de valores tienen probabilidad 0, y por lo tanto no hay incertidumbre sobre el valor que tomará la variable aleatoria.
 
-_¿Cómo se programaría esto en `python`?_
+<details>
+<summary><em>¿Cómo se programaría esto en <code>python</code>?</em></summary>
 
 ```python
 import numpy as np
@@ -218,6 +219,8 @@ plt.ylabel(r"$H(X)$ (bits)", fontsize=16)
 plt.xlabel(r"$p$", fontsize=16)
 plt.tick_params(axis="both", which="major", labelsize=14)
 ```
+
+</details>
 
 #### Recordatorio: probabilidades conjuntas y condicionales
 
