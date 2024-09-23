@@ -15,7 +15,7 @@ La teoría de la información se basa en la teoría de la probabilidad y en la t
 
 ### Esquema general de los sistemas de comunicación
 
-![shannon_comms](./img/shannon_communication_system.svg)
+![shannon_comms](../img/shannon_communication_system.svg)
 
 En general, un sistema de comunicación consta de los siguientes elementos:
 

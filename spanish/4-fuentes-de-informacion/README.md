@@ -60,7 +60,7 @@ Dada una fuente de Markov de orden $m$, se puede establecer su diagrama de estad
 
 #### Ejemplos
 
-A partir de un alfabeto binario $\left\{0,1\right\}$, se puede definir una fuente de Markov de orden 2 con los siguientes estados y probabilidades condicionales:
+A partir de un alfabeto binario $\left\\{0,1\right\\}$, se puede definir una fuente de Markov de orden 2 con los siguientes estados y probabilidades condicionales:
 
 - $P(0|00)=P(1|11)=0.7$
 - $P(1|00)=P(0|11)=0.3$
@@ -80,7 +80,7 @@ Se dice que una fuente de Markov es ergódica si es posible pasar de cualquier e
 
 Una fuente ergódica podría ser la anterior (podemos alcanzar cualquier estado en un número finito de pasos a partir de otro estado).
 
-Ejemplo de diagrama de estados de una fuente ergódica:
+Ejemplo de diagrama de estados de una fuente **no** ergódica:
 
 ![Non ergodic Markov diagram](./img/fuente-de-markov-no-ergódico.svg)
 
@@ -100,8 +100,8 @@ Volviendo al ejemplo inicial, la matriz de probabilidades tiene la siguiente for
 
 $$
 \Pi = \begin{matrix}
-& \begin{matrix} 00 & 01 & 10 & 11 \end{matrix} \\
-\begin{matrix} 00 \\ 01 \\ 10 \\ 11 \end{matrix} & \begin{pmatrix} 0.7 & 0.5 & 0.5 & 0.3 \\ 0 & 0 & 0.5 & 0.5 \\ 0.5 & 0.5 & 0 & 0 \\ 0.3 & 0.5 & 0.5 & 0.7 \end{pmatrix}
+& \begin{matrix} 00 & 01 & 10 & 11 \end{matrix} \\\
+\begin{matrix} 00 \\\ 01 \\\ 10 \\\ 11 \end{matrix} & \begin{pmatrix} 0.7 & 0.5 & 0.5 & 0.3 \\\ 0 & 0 & 0.5 & 0.5 \\\ 0.5 & 0.5 & 0 & 0 \\\ 0.3 & 0.5 & 0.5 & 0.7 \end{pmatrix}
 \end{matrix}
 $$
 
@@ -154,11 +154,11 @@ Dada una fuente de Markov de orden $m$ con un alfabeto $\mathcal{S}$ y una distr
 
 #### Ejemplo
 
-Para el ejemplo de la fuente de Markov de orden 2, la fuente afín sería la fuente de memoria nula con $\mathcal{S}=\left\{0,1\right\}$ y $P=\left\{\frac{1}{2},\frac{1}{2}\right\}$.
+Para el ejemplo de la fuente de Markov de orden 2, la fuente afín sería la fuente de memoria nula con $\mathcal{S}=\left\\{0,1\right\\}$ y $P=\left\\{\frac{1}{2},\frac{1}{2}\right\\}$.
 
 ---
 
-Para el cálculo de entropía de una fuente de Markov de orden $m$, sobre un alfabeto $\mathcal{S}=\left\{s_1,s_2,\dots,s_n\right\}$ y distribución de probabilidad condicional $P(s_i|s_{i_1},\dots,s_{i_m})$, se cumple que $p(s_i, s_{i_1},\dots,s_{i_m}) = p(s_i|s_{i_1},\dots,s_{i_m})\cdot p(s_{i_1},\dots,s_{i_m})$, lo cual nos permite calcular la entropía condicional:
+Para el cálculo de entropía de una fuente de Markov de orden $m$, sobre un alfabeto $\mathcal{S}=\left\\{s_1,s_2,\dots,s_n\right\\}$ y distribución de probabilidad condicional $P(s_i|s_{i_1},\dots,s_{i_m})$, se cumple que $p(s_i, s_{i_1},\dots,s_{i_m}) = p(s_i|s_{i_1},\dots,s_{i_m})\cdot p(s_{i_1},\dots,s_{i_m})$, lo cual nos permite calcular la entropía condicional:
 
 $$
 H(\mathcal{S}|s_{i_1},\dots,s_{i_m}) = -\sum_{i=1}^{n}p(s_i|s_{i_1},\dots,s_{i_m})\log\left(p(s_i|s_{i_1},\dots,s_{i_m})\right)
@@ -177,19 +177,18 @@ $$
 
 #### Ejemplo
 
-Tomemos una fuente de Markov de orden 2 definida por la siguientees probabilidades condicionales:
+Tomemos una fuente de Markov de orden 2 definida por la siguientes probabilidades condicionales:
 
-
-| $s_js_ks_i$ | $P(s_i|s_js_k)$ |
-|:-----------:|:---------------:|
-| 000         | 0.8             |
-| 001         | 0.2             |
-| 010         | 0.5             |
-| 011         | 0.5             |
-| 100         | 0.5             |
-| 101         | 0.5             |
-| 110         | 0.2             |
-| 111         | 0.8             |
+| $s_js_ks_i$ | $P(s_i\|s_js_k)$ |
+|:---------------|:-------------------|
+| 000            | 0.8                |
+| 001            | 0.2                |
+| 010            | 0.5                |
+| 011            | 0.5                |
+| 100            | 0.5                |
+| 101            | 0.5                |
+| 110            | 0.2                |
+| 111            | 0.8                |
 
 Podemos calcular las probabilidades en estado estacionario:
 
@@ -284,7 +283,7 @@ $$
 
 Así que podemos rellenar la tabla de probabilidades de estados en régimen estacionario:
 
-| $s_js_ks_i$ | $P(s_i|s_js_k)$ | $P(s_js_k)$ |
+| $s_js_ks_i$ | $P(s_i\|s_js_k)$ | $P(s_js_k)$ |
 |:-----------:|:---------------:|:-----------:|
 | 000         | 0.8             | 5/14        |
 | 001         | 0.2             | 5/14        |
@@ -297,7 +296,7 @@ Así que podemos rellenar la tabla de probabilidades de estados en régimen esta
 
 El siguiente paso es calcular la probabilidad conjunta de cada estado, es decir $P(s_i,s_j,s_k)$, sabiendo que $P(s_i,s_j,s_k) = P(s_i|s_j,s_k)\cdot P(s_j,s_k)$:
 
-| $s_js_ks_i$ | $P(s_i|s_j,s_k)$ | $P(s_j,s_k)$ | $P(s_i,s_j,s_k)$ |
+| $s_js_ks_i$ | $P(s_i\|s_j,s_k)$ | $P(s_j,s_k)$ | $P(s_i,s_j,s_k)$ |
 |:-----------:|:---------------:|:-----------:|:---------------:|
 | 000         | 0.8             | 5/14        | 4/14            |
 | 001         | 0.2             | 5/14        | 1/14            |
@@ -320,9 +319,9 @@ $$
 
 ### Fuentes de Bernoulli y Binomiales
 
-Sea la fuente $\left(\mathcal{S},P\right)$ donde $\mathcal{S}=\left\{x_1,x_2,\dots,x_n\right\}$ y $p(x_i)=p_i$ y supongamos que tomamos una secuencia $X_1,X_2,\dots,X_n$ de valores independientes.
+Sea la fuente $\left(\mathcal{S},P\right)$ donde $\mathcal{S}=\left\\{x_1,x_2,\dots,x_n\right\\}$ y $p(x_i)=p_i$ y supongamos que tomamos una secuencia $X_1,X_2,\dots,X_n$ de valores independientes.
 
-_¿Qué frecuencia de aparición del elemento $x_i$ esperamos en la secuencia?_
+_¿Qué frecuencia de aparición del elemento_ $x_i$ _esperamos en la secuencia?_
 
 - Cada valor de la secuencia es una prueba de Bernoulli, donde si $X_q = x_i$ tenemos un éxito y si $X_q\neq x_i$ tenemos un fracaso (la probabilidad de éxito es $p_i$).
 - El número de éxitos en la secuencia es una variable aleatoria $\mathcal{S}_i$ que sigue una distribución binomial con
@@ -339,7 +338,7 @@ $$
 P\left(\left|\frac{\mathcal{S}_i-\mu_i}{\sigma_i}\right|\geq k\right)\leq\frac{1}{k^2}
 $$
 
-Sea la fuente de información $\left(\mathcal{S},P\right)$ con $\mathcal{S}=\left\{x_1,x_2,\dots,x_n\right\}$ y $p(x_i)=p_i$, y supongamos que tomamos una secuencia $\alpha = \left\langle\alpha_1,\alpha_2,\dots,\alpha_n\right\rangle$ de valores independientes. Diremos que $\alpha$ es una secuencia $k$-típica si se cumple que´
+Sea la fuente de información $\left(\mathcal{S},P\right)$ con $\mathcal{S}=\left\\{x_1,x_2,\dots,x_n\right\\}$ y $p(x_i)=p_i$, y supongamos que tomamos una secuencia $\alpha = \left\langle\alpha_1,\alpha_2,\dots,\alpha_n\right\rangle$ de valores independientes. Diremos que $\alpha$ es una secuencia $k$-típica si se cumple que´
 
 $$
 \forall i: 1\leq i\leq n, \left|\frac{\mathcal{S}_i-\mu_i}{\sigma_i}\right|\leq k

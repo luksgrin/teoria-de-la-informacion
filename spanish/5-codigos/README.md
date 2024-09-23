@@ -42,10 +42,10 @@ $$
 f:\mathcal{A}^+\rightarrow\mathcal{B}^+
 $$
 
-en la que tenemos que $f\left(\mathcal{A}^+\right) = \mathcal{C}$. Equivalentemente, si tomamos $f(\lambda) = \lambda$ (y también $f^-1(\lambda) = \left\{\lambda\right\}$), entonces podemos extender esta aplicación inyectiva a
+en la que tenemos que $f\left(\mathcal{A}^+\right) = \mathcal{C}$. Equivalentemente, si tomamos $f(\lambda) = \lambda$ (y también $f^-1(\lambda) = \left\\{\lambda\right\\}$), entonces podemos extender esta aplicación inyectiva a
 
 $$
-f:\mathcal{A}^*\rightarrow\mathcal{B}^*
+f:\mathcal{A}^\*\rightarrow\mathcal{B}^\*
 $$
 
 En este escenario $\mathcal{A}$ recibe el nombre de "_alfabeto fuente_" y $\mathcal{B}$ "_alfabeto código_".
@@ -76,9 +76,9 @@ $$
 \forall x\in\mathcal{A}^+: f(x) = f(x[1])\dots f(x[|x|])
 $$
 
-_(todo esto es equivalente, y lo hemos visto anteriormente en la definición de homomorfismo en el apartado de estructura del lenguage)_
+_(todo esto es equivalente, y lo hemos visto anteriormente en la definición de homomorfismo en el apartado de estructura del lenguaje)._
 
-El conjunto $f(\mathcal{A})=\left\{f(a),\quad\forall\mathcal{A}\right\}$ recibe el nombre de "_código bloque_" (o simplemente "_código_").
+El conjunto $f(\mathcal{A})=\left\\{f(a),\quad\forall\mathcal{A}\right\\}$ recibe el nombre de "_código bloque_" (o simplemente "_código_").
 
 #### Ejemplo 1
 
@@ -86,8 +86,8 @@ Consideremos los siguientes alfabetos fuente ($\mathcal{A}$) y código ($\mathca
 
 $$
 \begin{align*}
-\mathcal{A} &=\left\{0,1,2,3,4,5,6,7,8,9\right\}\\
-\mathcal{B} &=\left\{0,1\right\}
+\mathcal{A} &=\left\\{0,1,2,3,4,5,6,7,8,9\right\\}\\
+\mathcal{B} &=\left\\{0,1\right\\}
 \end{align*}
 $$
 
@@ -100,14 +100,14 @@ $$
 claramente tenemos que 
 
 $$
-f(\mathcal{A}) = \left\{0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001\right\}
+f(\mathcal{A}) = \left\\{0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001\right\\}
 $$
 
 Se puede ver que $f(\mathcal{A})\subset\mathcal{B}^4$ (porque hay palabras en $\mathcal{B}^4$ que no aparecen en $f(\mathcal{A})$, como por ejemplo $1111$). $f$ es una codificación de bloque ya que le asigna a cada caracter del alfabeto fuente, una palabra formada por el alfabeto código.
 
 #### Ejemplo 2: Morse
 
-En el morse, el alfabeto código consta de los elementos $\left\{\cdot,-,\text{\texttt{pausa}}\right\}$:
+En el morse, el alfabeto código consta de los elementos $\left\\{\cdot,-,\text{\texttt{pausa}}\right\\}$:
 
 | Alfabeto fuente | Código |
 |:----------------|:-------|
@@ -150,11 +150,11 @@ Al codificar un mensaje en morse, después del código asociado a cada simbolo h
 
 #### Ejemplo 3: ASCII
 
-El ASCII (_American Standard Code for Information Interchange_) es una codificación bloque de logitud constante (no como el morse, que era de longitud variable) con alfabeto código $\mathcal{B}=\left\{0,1\right\}$ y $f(\mathcal{A})=\left\{0,1\right\}^7$.
+El ASCII (_American Standard Code for Information Interchange_) es una codificación bloque de logitud constante (no como el morse, que era de longitud variable) con alfabeto código $\mathcal{B}=\left\\{0,1\right\\}$ y $f(\mathcal{A})=\left\\{0,1\right\\}^7$.
 
 #### Ejemplo 4: ASCII Extendido
 
-El ASCII extendido es diferencia del ASCII por $f(\mathcal{A})=\left\{0,1\right\}^8$ (la longitud de las palabras es mayor).
+El ASCII extendido es diferencia del ASCII por $f(\mathcal{A})=\left\\{0,1\right\\}^8$ (la longitud de las palabras es mayor).
 
 #### Unicode
 
@@ -172,7 +172,7 @@ $$
 
 #### Ejemplo 1
 
-Sea $\mathcal{A} = \left\{a_1,a_2,a_3,a_4\right\}, $\mathcal{B} = \left\{0,1\right\} y $f$ definida por:
+Sea $\mathcal{A} = \left\\{a_1,a_2,a_3,a_4\right\\}, $\mathcal{B} = \left\\{0,1\right\\} y $f$ definida por:
 
 $$
 f = \begin{cases}
@@ -191,7 +191,7 @@ Es sencilo ver que $f$ es no singular. Sin embargo, si nos extendemos a palabras
 
 ---
 
-La extensión de orden $n\geq 1$de una codificación bloque
+La extensión de orden $n\geq 1$ de una codificación bloque
 
 $$
 f:\mathcal{A}^+\rightarrow\mathcal{B}^+
@@ -235,13 +235,13 @@ $$
 \begin{align*}
 &\text{if }\left(\exists a,b\in\mathcal{A}: (a\neq b)\wedge(f(a)=f(b))\right)\text{then:}\\
 &\quad\quad\text{return \texttt{false}}\\
-&A=\left\{u: \left(\exists x,y\in f(\mathcal{A}):(x\neq y)\wedge (xu=y)\right)\right\}\\
+&A=\left\\{u: \left(\exists x,y\in f(\mathcal{A}):(x\neq y)\wedge (xu=y)\right)\right\\}\\
 &\text{if}\left(A\cap f(A)\neq\emptyset\right)\text{ then:}\\
 &\quad\quad\text{return \texttt{false}}\\
 &A'=\emptyset\\
 &\text{while }A\neq\emptyset:\\
 &\quad\quad A'=A\cup A'\\
-&\quad\quad B = \left\{u:\left(\left(\exists x\in f(\mathcal{A}): xu\in A\right)\vee\left(\exists x\in A: xu\in f(\mathcal{A})\right)\right)\right\}\\
+&\quad\quad B = \left\\{u:\left(\left(\exists x\in f(\mathcal{A}): xu\in A\right)\vee\left(\exists x\in A: xu\in f(\mathcal{A})\right)\right)\right\\}\\
 &\quad\quad A = B - A'\\
 &\quad\quad\text{if }\left(A\cap f(\mathcal{A})\neq\emptyset\right)\text{ then:}\\
 &\quad\quad\quad\quad\text{return \texttt{false}}\\
@@ -251,7 +251,7 @@ $$
 
 Sea $f:\mathcal{A}^+\rightarrow\mathcal{B}^+$ una codificación bloque no singular. Si todas las palabras del código bloque tienen exactamente la misma longitud, entonces el código es unívocamente decodificable.
 
-_Piensa en el Ejemplo 1 de esta sección. ¿De dónde salían los problemas a la hora de decodificar? Surgían del hecho de que no todas lass palabras del código bloque tenían la misma longitud_
+_Piensa en el Ejemplo 1 de esta sección. ¿De dónde salían los problemas a la hora de decodificar? Surgían del hecho de que no todas las palabras del código bloque tenían la misma longitud_
 
 ### Desigualdad de McMillan
 
@@ -267,15 +267,15 @@ Recuperando el ejemplo anterior de los siguientes alfabetos fuente ($\mathcal{A}
 
 $$
 \begin{align*}
-\mathcal{A} &=\left\{0,1,2,3,4,5,6,7,8,9\right\}\\
-\mathcal{B} &=\left\{0,1\right\}
+\mathcal{A} &=\left\\{0,1,2,3,4,5,6,7,8,9\right\\}\\
+\mathcal{B} &=\left\\{0,1\right\\}
 \end{align*}
 $$
 
 con 
 
 $$
-f(\mathcal{A}) = \left\{0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001\right\}
+f(\mathcal{A}) = \left\\{0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001\right\\}
 $$
 
 La desigualdad de McMillan debería de cumplirse ya que es una codificación bloque unívocamente decodificable:
@@ -292,15 +292,15 @@ Imaginémonos ahora que tenemos
 
 $$
 \begin{align*}
-\mathcal{A} &=\left\{0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f\right\}\\
-\mathcal{B} &=\left\{0,1\right\}
+\mathcal{A} &=\left\\{0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f\right\\}\\
+\mathcal{B} &=\left\\{0,1\right\\}
 \end{align*}
 $$
 
 con 
 
 $$
-f(\mathcal{A}) = \left\{0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001,1010,1011,1100,1101, 1110,1111\right\}
+f(\mathcal{A}) = \left\\{0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001,1010,1011,1100,1101, 1110,1111\right\\}
 $$
 
 _(¿no resulta esto familiar? Es la representación en binario del hexadecimal)_
@@ -338,13 +338,13 @@ Para decodificar, es esencial conocer cuantos $1$ tenemos en la palabra $x$. Est
 Se dice que un código unívocamente decodificable es **instantáneo** cuando es posible decodificar cada símbolo de $\mathcal{A}$ de cada mensaje sin necesitar más símbolos de $\mathcal{B}$ de los estricamente necesarios. Es decir, si
 
 $$
-h:\mathcal{A}^*\rightarrow\mathcal{B}^*
+h:\mathcal{A}^\*\rightarrow\mathcal{B}^\*
 $$
 
 es una codificación bloque unívocamente decodificable, entonces es instantánea siempre que
 
 $$
-\forall x\in\mathcal{A}^*, \exists u,v\in\mathcal{A}^*,\exists a\in\mathcal{A}: x=uav
+\forall x\in\mathcal{A}^\*, \exists u,v\in\mathcal{A}^\*,\exists a\in\mathcal{A}: x=uav
 $$
 
 tal que
@@ -374,12 +374,12 @@ Una vez más, diremos que un código bloque es instantáneo cuando proviene de u
 
 ---
 
-Sea $f:\mathcal{A}^*\rightarrow\mathcal{B}^*$ una codificación de bloque. Diremos que $f$ es **estable** siempre que:
+Sea $f:\mathcal{A}^\*\rightarrow\mathcal{B}^\*$ una codificación de bloque. Diremos que $f$ es **estable** siempre que:
 
 1. Sea unívocamente decodificable.
-2. $\forall x\in\mathcal{A}^*,f(x)=u$ se cumple que $\forall v\in\mathcal{B}^*$, si $\exists y\in\mathcal{A}^*,f(y)=uv\Rightarrow y=xz$ para algún $z\in\mathcal{A}^*$
+2. $\forall x\in\mathcal{A}^\*,f(x)=u$ se cumple que $\forall v\in\mathcal{B}^\*$, si $\exists y\in\mathcal{A}^\*,f(y)=uv\Rightarrow y=xz$ para algún $z\in\mathcal{A}^*$
 
-Tenemos entonces la siguiente propiedad: sea $f:\mathcal{A}^*\rightarrow\mathcal{B}^*$ una codificación bloque. Entonces, **$f$ es estable si y sólo si es instantánea.
+Tenemos entonces la siguiente propiedad: sea $f:\mathcal{A}^\*\rightarrow\mathcal{B}^\*$ una codificación bloque. Entonces, **$f$** es estable si y sólo si es instantánea.
 
 ---
 
@@ -388,10 +388,10 @@ Tenemos entonces la siguiente propiedad: sea $f:\mathcal{A}^*\rightarrow\mathcal
 Veamos cómo estad características cualitativas se traducen cuantitativamente. Sea la codificación bloque:
 
 $$
-f:\mathcal{A}^*\rightarrow\mathcal{B}^*
+f:\mathcal{A}^\*\rightarrow\mathcal{B}^\*
 $$
 
-con $\mathcal{A}=\left\{a_1,\dots,a_n\right\}$, $\mathcal{B}=\left\{b_1,\dots,b_k\right\}$ y $f\left(\mathcal{A}\right)=\left\{x_1,\dots,x_n\right\}$, con $l_i = \left|x_i\right|$. La desigualdad de Kraft nos da la condición **necesaria** y **suficiente** para que exista un código bloque instantáneo con palabras de su código bloque de longitud $l_1,\dots,l_n$ sobre un alfabeto con $k$ símbolos:
+con $\mathcal{A}=\left\\{a_1,\dots,a_n\right\\}$, $\mathcal{B}=\left\\{b_1,\dots,b_k\right\\}$ y $f\left(\mathcal{A}\right)=\left\\{x_1,\dots,x_n\right\\}$, con $l_i = \left|x_i\right|$. La desigualdad de Kraft nos da la condición **necesaria** y **suficiente** para que exista un código bloque instantáneo con palabras de su código bloque de longitud $l_1,\dots,l_n$ sobre un alfabeto con $k$ símbolos:
 
 $$
 \sum_{1\leq i\leq n}k^{-l_i}\leq 1
@@ -406,18 +406,18 @@ Como consecuencia inmediata, a partir de la desigualdad de McMillan, se tiene qu
 Sea la codificación de bloque:
 
 $$
-f:\mathcal{A}^*\rightarrow\mathcal{B}^*
+f:\mathcal{A}^\*\rightarrow\mathcal{B}^\*
 $$
 
-diremos que es completa si:ç
+diremos que es completa si:
 
 1. Es instantánea.
-2. Cumple que $\forall x\in\mathcal{B}^*,\exists a\in\mathcal{A}^*\Rightarrow\left(\left(h(a)\text{ es prefijo de }x\right)\vee\left(x\text{ es prefijo de }h(a)\right)\right)$.
+2. Cumple que $\forall x\in\mathcal{B}^\*,\exists a\in\mathcal{A}^\*\Rightarrow\left(\left(h(a)\text{ es prefijo de }x\right)\vee\left(x\text{ es prefijo de }h(a)\right)\right)$.
 
 Tenemos entonces la siguiente propiedad: si $\left|\mathcal{A}\right|\geq 2$ y $\left|\mathcal{B}\right|=2$, entonces sólo existe una codificación de bloque completa
 
 $$
-f':\mathcal{A}^*\rightarrow\mathcal{B}^*
+f':\mathcal{A}^\*\rightarrow\mathcal{B}^\*
 $$
 
 tal que $\forall a\in\mathcal{A}:\left|f'(a)\right|\leq\left|f(a)\right|$.
@@ -428,14 +428,14 @@ Nuevamente, un código bloque es completo si proviene de una codificación de bl
 
 ### Longitud media de un código
 
-Para un $\mathcal{A}^*$ y $\mathcal{B}^*$, es posible definir más de una codificación instantánea o unívocamente decodificable. Esto requiere entonces que intentemos elegir las más eficientes con el objetivo de tener una transmisión de información óptima.
+Para un $\mathcal{A}^\*$ y $\mathcal{B}^\*$, es posible definir más de una codificación instantánea o unívocamente decodificable. Esto requiere entonces que intentemos elegir las más eficientes con el objetivo de tener una transmisión de información óptima.
 
 Un criterio natural de selección (aún cuando no es el único posible) es el de la mínima longitud media.
 
-Sea un código bloque que asocia los símbolos de una **fuente de información de memoria nula** $FI = \left(\mathcal{A},P\right)$ donde $\mathcal{A}=\left\{a_1,\dots,a_n\right\}$ y $\left|\mathcal{B}\right|=k$ mediante la codificación $f:\mathcal{A}^*\rightarrow\mathcal{B}^*$ con las palabras $f\left(a_i\right)=x_i$, con $l_i=\left|x_i\right|,i=1,\dots,n$. Definimos la lonfitud media como la **esperanza matemática de la longitud de los códigos bloque**:
+Sea un código bloque que asocia los símbolos de una **fuente de información de memoria nula** $FI = \left(\mathcal{A},P\right)$ donde $\mathcal{A}=\left\\{a_1,\dots,a_n\right\\}$ y $\left|\mathcal{B}\right|=k$ mediante la codificación $f:\mathcal{A}^\*\rightarrow\mathcal{B}^\*$ con las palabras $f\left(a_i\right)=x_i$, con $l_i=\left|x_i\right|,i=1,\dots,n$. Definimos la lonfitud media como la **esperanza matemática de la longitud de los códigos bloque**:
 
 $$
-\mathcal{L}_f=\mathbb{E}\left[l\right]=\mathbb{E}\left[\left|x\right|\right]=\mathbb{E}\left[\left|f(a)\right|\right]=\sum_{i=1}^n \left|f(a_i)\right|p(a_i)
+\mathcal{L}\_f=\mathbb{E}\left[l\right]=\mathbb{E}\left[\left|x\right|\right]=\mathbb{E}\left[\left|f(a)\right|\right]=\sum\_{i=1}^n \left|f(a_i)\right|p(a_i)
 $$
 
 ### Códigos óptimos
@@ -456,21 +456,21 @@ $$
 
 Consideremos una fuente de memoria nula $FI$ cuyos símbolos $a_1,\dots,a_n$ con probabilidades $p_1,\dots,p_n$ se codifican cada uno en una palabra de longitud $l_i$ en un alfabeto con $k$ símbolos mediante la codificación $f$. Entonces se tiene que $H_k\left(FI\right)\leq\mathcal{L}_f$.
 
-Si suponemos que nos encontramos en el caso de la igualdad, es decir, $H_k\left(FI\right)=\mathcal{L}_f$:
+Si suponemos que nos encontramos en el caso de la igualdad, es decir, $H\_k\left(FI\right)=\mathcal{L}\_f$:
 
 $$
 \begin{align*}
-H_k\left(FI\right)&=\mathcal{L}_f\\
-\sum_{i=1}^np_i\log_k\left(\frac{1}{p_i}\right)&=\sum_{i=1}^np_il_i
+H\_k\left(FI\right)&=\mathcal{L}\_f\\
+\sum_{i=1}^np\_i\log\_k\left(\frac{1}{p_i}\right)&=\sum\_{i=1}^np_il\_i
 \end{align*}
 $$
 
 inferimos que si tomamos longitudes de código $l_i=\left|x_i\right|=\left|f(a_i)\right|$, tendremos que los códigos obtenidos para cada $a_i$ serán instantáneos, completos y óptimos con una longitud media que coincide con la entropía en base $k$ de la fuente de información (asumiendo claramente que $\log_k\left(\frac{1}{p_i}\right)$ es un número entero $\forall 1\leq i\leq n$).
 
-Veamos un ejemplo: supón que tenemos $FI=\left(\left\{a_1,a_2,a_3\right\},\left\{\frac{1}{2},\frac{1}{4},\frac{1}{4}\right\}\right)$, entonces la codificación de bloque:
+Veamos un ejemplo: supón que tenemos $FI=\left(\left\\{a_1,a_2,a_3\right\\},\left\\{\frac{1}{2},\frac{1}{4},\frac{1}{4}\right\\}\right)$, entonces la codificación de bloque:
 
 $$
-h:\left\{a_1,a_2,a_3\right\}^*\rightarrow\left\{0,1\right\}^*
+h:\left\\{a_1,a_2,a_3\right\\}^\*\rightarrow\left\\{0,1\right\\}^\*
 $$
 
 definida tomando las longitudes de los códigos como $\log\left(\frac{1}{p_i}\right)$:
@@ -483,7 +483,7 @@ h\left(a_3\right) &= 01
 \end{cases}
 $$
 
-es instantánea, completa y óptima con $\mathcal{L}_h=H\left(FI\right)$.
+es instantánea, completa y óptima con $\mathcal{L}\_h=H\left(FI\right)$.
 
 Pero, ¿qué sucede si resulta que $\log_k\left(\frac{1}{p_i}\right)$ no resultan ser números enteros? Parece intuitivo y apropiado en este contexto redondear el valor obtenido hacia arriba, para elegir $l_i$ (aunque claramente en este caso, el código obtenido no tiene por qué ser 
 optimo). Entonces si $l_i=\left\lceil\log_k\left(\frac{1}{p_i}\right)\right\rceil$, por definición se tiene que
@@ -524,9 +524,9 @@ y sumando ya que la desigualdad se cumple $\forall 1\leq i\leq n$:
 
 $$
 \begin{align*}
-\sum_{i=1}^np_i\log_k\left(\frac{1}{p_i}\right)&\leq\sum_{i=1}^np_il_i\leq \sum_{i=1}^np_i\log_k\left(\frac{1}{p_i}\right) + \sum_{i=1}^np_i\\
-H_k\left(FI\right)&\leq\mathcal{L}_f\leq H_k\left(FI\right) + \sum_{i=1}^np_i\\
-H_k\left(FI\right)&\leq\mathcal{L}_f\leq H_k\left(FI\right) + 1\\
+\sum_{i=1}^np\_i\log\_k\left(\frac{1}{p_i}\right)&\leq\sum\_{i=1}^np_il\_i\leq \sum\_{i=1}^np\_i\log\_k\left(\frac{1}{p_i}\right) + \sum_{i=1}^np\_i\\
+H\_k\left(FI\right)&\leq\mathcal{L}\_f\leq H\_k\left(FI\right) + \sum_{i=1}^np\_i\\
+H\_k\left(FI\right)&\leq\mathcal{L}\_f\leq H\_k\left(FI\right) + 1\\
 \end{align*}
 $$
 
@@ -548,8 +548,8 @@ Una propiedad interesante surge cuando intentamos ver qué pasa cuando la extens
 
 $$
 \begin{align*}
-\lim_{m\to\infty}H_k\left(FI\right)&\leq\lim_{m\to\infty}\frac{\mathcal{L}_f^m}{m}\leq \lim_{m\to\infty}H_k\left(FI\right) + \lim_{m\to\infty}\frac{1}{m}\\
-H_k\left(FI\right)&\leq\lim_{m\to\infty}\frac{\mathcal{L}_f^m}{m}\leq H_k\left(FI\right) + 0\\
+\lim\_{m\to\infty}H\_k\left(FI\right)&\leq\lim\_{m\to\infty}\frac{\mathcal{L}\_f^m}{m}\leq \lim\_{m\to\infty}H\_k\left(FI\right) + \lim\_{m\to\infty}\frac{1}{m}\\
+H\_k\left(FI\right)&\leq\lim\_{m\to\infty}\frac{\mathcal{L}\_f^m}{m}\leq H\_k\left(FI\right) + 0\\
 \end{align*}
 $$
 
@@ -559,13 +559,13 @@ $$
 \lim_{m\to\infty}\frac{\mathcal{L}_f^m}{m} = H_k\left(FI\right)
 $$
 
-Nótese que $\frac{\mathcal{L}_f^m}{m}$ es el **número medio de símbolos del alfabeto código ($\mathcal{B}$) empleados en la codificación de un símbolo del alfabeto fuente ($\mathcal{A}$) cuando se emiten secuencias de longitud $m$, es decir, como símbolos del alfabeto $\mathcal{A}^{(m)}$.
+Nótese que $\frac{\mathcal{L}_f^m}{m}$ es el número medio de símbolos del alfabeto código ($\mathcal{B}$) empleados en la codificación de un símbolo del alfabeto fuente ($\mathcal{A}$) cuando se emiten secuencias de longitud $m$, es decir, como símbolos del alfabeto $\mathcal{A}^{(m)}$.
 
 ---
 
 #### Ejemplo Aplicado
 
-Sea una fuente de $FI$ de memoria nula definida por $\mathcal{A}=\left\{a_1,a_2,a_3\right\}$ con $P=\left\{\frac{3}{4},\frac{1}{12},\frac{2}{12}\right\}$, y además $\mathcal{B}=\left\{0,1\right\}$. Construyámonos una tabla con `python`, `pandas` y `numpy`:
+Sea una fuente de $FI$ de memoria nula definida por $\mathcal{A}=\left\\{a_1,a_2,a_3\right\\}$ con $P=\left\\{\frac{3}{4},\frac{1}{12},\frac{2}{12}\right\\}$, y además $\mathcal{B}=\left\\{0,1\right\\}$. Construyámonos una tabla con `python`, `pandas` y `numpy`:
 
 ```python
 import pandas as pd
@@ -595,11 +595,11 @@ df["log2(1/p)"] = np.log2(1/df["p"])
 
 obteniéndose la tabla
 
-|    |         p |   log2(1/p) |
+|    |         $p$ |   $\log_2(1/p)$ |
 |:---|----------:|------------:|
-| a1 | 0.75      |    0.415037 |
-| a2 | 0.0833333 |    3.58496  |
-| a3 | 0.166667  |    2.58496  |
+| $a_1$ | 0.75      |    0.415037 |
+| $a_2$ | 0.0833333 |    3.58496  |
+| $a_3$ | 0.166667  |    2.58496  |
 
 y a continuación calculamos las longitudes $l_i = \left\lceil\log\left(\frac{1}{p_i}\right)\right\rceil$:
 
@@ -609,19 +609,19 @@ df["l"] = np.ceil(df["log2(1/p)"])
 
 obteniéndose la tabla
 
-|    |         p |   log2(1/p) |   l |
+|    |         $p$ |   $\log_2(1/p)$ |   l |
 |:---|----------:|------------:|----:|
-| a1 | 0.75      |    0.415037 |   1 |
-| a2 | 0.0833333 |    3.58496  |   4 |
-| a3 | 0.166667  |    2.58496  |   3 |
+| $a_1$ | 0.75      |    0.415037 |   1 |
+| $a_2$ | 0.0833333 |    3.58496  |   4 |
+| $a_3$ | 0.166667  |    2.58496  |   3 |
 
 Por lo tanto podemos proponer un código instantáneo dado por estas longitudes y empleando el alfabeto código mencionado anteriormente. Por ejemplo:
 
-|    |         p |   log2(1/p) |   l |   codigo |
-|:---|----------:|------------:|----:|---------:|
-| a1 | 0.75      |    0.415037 |   1 |        1 |
-| a2 | 0.0833333 |    3.58496  |   4 |     0001 |
-| a3 | 0.166667  |    2.58496  |   3 |      001 |
+|    |         $p$ |   $\log_2(1/p)$ |   l | codigo |
+|:---|----------:|------------:|----:|-------:|
+| $a_1$ | 0.75      |    0.415037 |   1 |   1 |
+| $a_2$ | 0.0833333 |    3.58496  |   4 |  0001 |
+| $a_3$ | 0.166667  |    2.58496  |   3 |   001 |
 
 Si quisiéramos calcular la longitud media
 
