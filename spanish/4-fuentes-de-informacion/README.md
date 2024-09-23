@@ -356,3 +356,5 @@ lo cual significa que en la secuencia $\alpha$ la frecuencia de aparición de ca
 Hay una relación entre las secuencias $k$-típicas y la entropía de la fuente de información. Si $n$ es suficientemente grande, entonces la probabilidad de que una secuencia aleatoria de longitud $n$ sea $k$-típica es muy cercana a 1. Por lo tanto, la entropía de la fuente de información se puede aproximar mediante la entropía de las secuencias $k$-típicas.
 
 El número de secuencias $k$-típicas de longitud $n$ es igual a $m^{nH_m(X)}$.
+
+# [Códigos (click para acceder al contenido)](../5-codigos/README.md)

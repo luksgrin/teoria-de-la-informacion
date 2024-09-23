@@ -94,7 +94,7 @@ $$
 y además consideremos la codificación de bloque definida por $f$:
 
 $$
-f(a) = \left(\left\lfloor\frac{a_1}{2^0}\right\rfloor\right)\left(\left\lfloor\frac{a_2}{2^1}\right\rfloor\right)\left(\left\lfloor\frac{a_3}{2^2}\right\rfloor\right)\left(\left\lfloor\frac{a_4}{2^3}\right\rfloor\right)
+f(a) = \left(\left\lfloor\frac{a}{2^3}\right\rfloor\mod 2\right)\left(\left\lfloor\frac{a \mod 2^3}{2^2}\right\rfloor\mod 2\right)\left(\left\lfloor\frac{a \mod 2^2}{2^1}\right\rfloor\mod 2\right)\left(\left\lfloor\frac{a \mod 2}{2^0}\right\rfloor\mod 2\right)
 $$
 
 claramente tenemos que 
@@ -239,7 +239,7 @@ $$
 &\text{if}\left(A\cap f(A)\neq\emptyset\right)\text{ then:}\\
 &\quad\quad\text{return \texttt{false}}\\
 &A'=\emptyset\\
-&\text{while }A'\neq\emptyset:\\
+&\text{while }A\neq\emptyset:\\
 &\quad\quad A'=A\cup A'\\
 &\quad\quad B = \left\{u:\left(\left(\exists x\in f(\mathcal{A}): xu\in A\right)\vee\left(\exists x\in A: xu\in f(\mathcal{A})\right)\right)\right\}\\
 &\quad\quad A = B - A'\\
@@ -391,10 +391,10 @@ $$
 f:\mathcal{A}^*\rightarrow\mathcal{B}^*
 $$
 
-con $\mathcal{A}=\left\{a_1,\dots,a_n\right\}$, $\mathcal{B}=\left\{b_1,\dots,b_k\right\}$ y $f\left(\mathcal{A}\right)=\left\{x_1,\dots,x_n\right\}$, con $l_i = \left|x_i\right|$. La desigualdad de Kraft nos da la condición **necesaria** y **suficiente** para que exista un código bloque isntantáneo con palabras de su código bloque de longitud $l_1,\dots,l_n$ sobre un alfabeto con $k$ símbolos:
+con $\mathcal{A}=\left\{a_1,\dots,a_n\right\}$, $\mathcal{B}=\left\{b_1,\dots,b_k\right\}$ y $f\left(\mathcal{A}\right)=\left\{x_1,\dots,x_n\right\}$, con $l_i = \left|x_i\right|$. La desigualdad de Kraft nos da la condición **necesaria** y **suficiente** para que exista un código bloque instantáneo con palabras de su código bloque de longitud $l_1,\dots,l_n$ sobre un alfabeto con $k$ símbolos:
 
 $$
-\sum_{1\leq i\leq n}k^{l_i}\leq 1
+\sum_{1\leq i\leq n}k^{-l_i}\leq 1
 $$
 
 Cuando esto es una igualdad estricta, se conoce como la igualdad de Kraft.

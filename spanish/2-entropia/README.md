@@ -433,3 +433,5 @@ H(X) &= -\int_{-\infty}^\infty f(x)\log\left(f(x)\right)dx\\
 &= \log\left(\sigma\sqrt{2\pi e}\right)\\
 \end{align*}
 $$
+
+# [Estructura del lenguaje (click para acceder al contenido)](../3-estructura-del-lenguaje/README.md)

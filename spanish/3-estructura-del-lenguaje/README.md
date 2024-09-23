@@ -249,7 +249,7 @@ Nótese que trivialmente se tienen las siguientes propiedades:
 
 Sean las palabras $x=010$ e $y=011$. ¿Cuál es la relación de orden alfabético entre $x$ e $y$?
 
-Para determinar la relación de orden alfabético entre $x$ e $y$, primero comprobamos si $x$ es prefijo de $y$ o viceversa. En este caso, $x$ no es prefijo de $y$ y $y$ no es prefijo de $x$. Por tanto, comprobamos si tienen un prefijo común. En este caso, el prefijo común es la palabra vacía $\lambda$. Por consiguiente, comprobamos si el siguiente símbolo de $x$ es menor que el siguiente símbolo de $y$. En este caso, el siguiente símbolo de $x$ es 1 y el siguiente símbolo de $y$ es 1. Como 0 es menor que 1, entonces $x < y$ en el orden alfabético.
+Para determinar la relación de orden alfabético entre $x$ e $y$, primero comprobamos si $x$ es prefijo de $y$ o viceversa. En este caso, $x$ no es prefijo de $y$ y $y$ no es prefijo de $x$. Por tanto, comprobamos si tienen un prefijo común. En este caso, el prefijo común es la palabra vacía $01$. Por consiguiente, comprobamos si el siguiente símbolo de $x$ es menor que el siguiente símbolo de $y$. En este caso, el siguiente símbolo de $x$ es 0 y el siguiente símbolo de $y$ es 1. Como 0 es menor que 1, entonces $x < y$ en el orden alfabético.
 
 ---
 
@@ -360,3 +360,5 @@ $$
 donde se cumple que $x_i' \leq x_j'$ para cualquier $i,j=1,\dots,n$.
 
 Para $\boldsymbol{x}$, denotamos su componente $i$-ésima como $x(i)$, con $1\leq i\leq n$.
+
+# [Fuentes de Información (click para acceder al contenido)](../4-fuentes-de-informacion/README.md)

@@ -1,0 +1,62 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\title{\vspace{-6cm}}
+\date{}
+\setlength{\parindent}{0pt}
+
+\usepackage[a4paper, total={7in, 7in}, bottom=1in, top=2in]{geometry}
+\textwidth  = 540.000pt % (= 14.25cm)
+\pagenumbering{gobble}
+\renewcommand{\labelenumi}{\alph{enumi})}
+%\usepackage{ucs}
+%\usepackage[utf-8]{inputenc}
+\usepackage[spanish,es-tabla]{babel} % Cargamos es-tabla para Tabla en lugar de Cuadro
+\usepackage[utf8]{inputenc} % Codificación de entrada
+\usepackage[T1]{fontenc} % Codificación de fuente
+\usepackage{lmodern} % Fuente compatible
+\begin{document}
+\maketitle
+Apellidos:\hspace{11cm}Nombre:\\\\
+\hspace*{4cm}\textbf{PRIMER Y SEGUNDO PARCIAL DE MDTI 2023-2024 (recuperación)}\hspace*{0.5cm}Nº de hojas:\\\\
+
+\textbf{NOTAS:}
+\begin{enumerate}
+    \item\textbf{Todas las afirmaciones deben justificarse.}
+    \item\textbf{Se valorará la calidad de la exposición de la respuesta, así como la precisión, concisión y rigor de esta.}
+\end{enumerate}
+
+\vspace{0.2cm}
+
+\textbf{1.} \textit{(0.2 p)}  En  una red de Barabasi de parámetros N y m, ?`qué significa la m? Justifica tu respuesta.\\\\
+\textbf{2.} \textit{(0.2 p)} ?`Cuál es la probabilidad de que al escoger aleatoriamente un nodo en una red de Barabasi G(1000,5) un vértice tenga grado 50? (NOTA: no tienes que calcularlo, solo déjalo indicado) Justifica tu respuesta.\\\\
+\textbf{3.} \textit{(0.2 p)} ?` Cuándo se dice que una red aleatoria G(N,p) está en régimen supercrítico? Justifica tu respuesta.\\\\
+\textbf{4.} \textit{(0.2 p)}  En la distribución de grado de una ley de potencias y una de Poisson, con N nodos y con un mismo grado medio, ?`para qué valores de grado k está la ley de potencias por encima de la  distribución de Poisson? Justifica tu respuesta.\\\\
+
+Justifica tus respuestas.\\
+
+\textbf{5.} Considera una fuente de memoria nula con alfabeto \(\mathcal{A} = \{x, y, z, w\}\) y probabilidades \(P(x) = 0.4\), \(P(y) = 0.3\) y \(P(z) = 0.2\). Además, se tiene un como alfabeto código \(\mathcal{B} = \{0, 1\}\) y la siguiente codificación \(h\): \(h(x) = 0\), \(h(y) = 10\), \(h(z) = 110\), \(h(w) = 111\).
+
+\begin{enumerate}
+    \item \textit{(0.2 p)} ¿Es la codificación instantánea? Justifica tu respuesta.
+    \item \textit{(0.2 p)} ¿Cumple la desigualdad de Kraft? Justifica tu respuesta.
+    \item \textit{(0.8 p)} Calcula la la redundancia del código.
+\end{enumerate}
+
+\textbf{6.} \textit{(1 p)} Una fuente de información genera letras del alfabeto \(\{A, B, C, D, E, F, G, H\}\) con probabilidades \(P(A) = 0.05\), \(P(B) = 0.08\), \(P(C) = 0.12\), \(P(D) = 0.05\), \(P(E) = 0.23\), \(P(F) = 0.17\), \(P(G) = 0.28\). Considerando el alfabeto código \(\mathcal{B} =\left\{t,x,y,z\right\}\), construye un código mediante el método de Shannon
+
+
+\textbf{7.} \textit{(1.2 p)} Considera una fuente de Markov con los estados \(S\) y \(T\) y la siguiente matriz de transición:
+
+\[
+\begin{pmatrix}
+0.7 & 0.3 \\
+0.4 & 0.6
+\end{pmatrix}
+\]
+
+donde la primera fila y columna corresponden al estado \(S\), y la segunda fila y columna corresponden al estado \(T\). Dibuja el diagrama de estados de la fuente y calcula la entropía.
+
+
+\end{document}
