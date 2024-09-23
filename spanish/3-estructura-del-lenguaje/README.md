@@ -6,7 +6,7 @@ Antes de estudiar fuentes de información, es necesario definir un lenguaje para
 
 Un **alfabeto** es un conjunto finito de símbolos. Por ejemplo, nuestro alfabeto podría decirse que está formado por las letras del abecedario. Un **símbolo** es un elemento de un alfabeto. Por ejemplo, la letra "a" es un símbolo de nuestro alfabeto.
 
-En lenguaje formal matemático, un alfabeto $\mathcal{A}$ es un conjunto finito (salvo que se indique lo contrario de forma explícita) y no vacío cuyos elementos se denominan **símbolos**. Por ejemplo, si $\mathcal{A} = \{a, b, c\}$, entonces $a$, $b$ y $c$ son símbolos de $\mathcal{A}$.
+En lenguaje formal matemático, un alfabeto $\mathcal{A}$ es un conjunto finito (salvo que se indique lo contrario de forma explícita) y no vacío cuyos elementos se denominan **símbolos**. Por ejemplo, si $\mathcal{A} = \\{a, b, c\\}$, entonces $a$, $b$ y $c$ son símbolos de $\mathcal{A}$.
 
 Sea entonces $\mathcal{A}$ un alfabeto. Una **palabra** $x$ es una secuencia finita de símbolos de $\mathcal{A}$ de la forma
 
@@ -24,7 +24,7 @@ El número de elementos (también llamado cardinal) de $\mathcal{A}^n$ es $|\mat
 
 #### Ejemplo
 
-Tenemos un alfabeto $\mathcal{A}=\{0,1\}$, y queremos encontrar el conjunto de todas las palabras de longitud 3 formadas por símbolos de $\mathcal{A}$.
+Tenemos un alfabeto $\mathcal{A}=\\{0,1\\}$, y queremos encontrar el conjunto de todas las palabras de longitud 3 formadas por símbolos de $\mathcal{A}$.
 
 Entonces, $\mathcal{A}^3=\{000,001,010,011,100,101,110,111\}$.
 
@@ -43,7 +43,7 @@ $$
 
 Es decir, $\mathcal{A}^+$ es la unión de todos los conjuntos de palabras de longitud $n$ formadas por símbolos de $\mathcal{A}$. Se trata de un conjunto donde existen palabras de todas las longitudes posibles hasta un máximo de longitud $n$. Este conjunto se parece un poco a las palabras en el lenguaje natural, donde existen palabras de diferentes longitudes.
 
-_¿Cuántos elementos tiene $\mathcal{A}^+$?_
+_¿Cuántos elementos tiene_ $\mathcal{A}^+$ _?_
 
 Sabemos que
 
@@ -83,7 +83,7 @@ $$
 
 #### Ejemplo
 
-Tenemos un alfabeto $\mathcal{A}=\{0,1\}$, y queremos encontrar el conjunto de todas las palabras finitas (no nulas, de hasta un máximo de longitud 5) formadas por símbolos de $\mathcal{A}$. ¿Cuántos elementos tiene $\mathcal{A}^+$?
+Tenemos un alfabeto $\mathcal{A}=\\{0,1\\}$, y queremos encontrar el conjunto de todas las palabras finitas (no nulas, de hasta un máximo de longitud 5) formadas por símbolos de $\mathcal{A}$. ¿Cuántos elementos tiene $\mathcal{A}^+$?
 
 Sin necesidad de construir cada palabra, podemos calcular el número de elementos de $\mathcal{A}^+$ usando la fórmula anterior. Como $|\mathcal{A}|=2$ y $n=5$, el número de elementos de $\mathcal{A}^+$ es
 
@@ -139,10 +139,10 @@ _Podéis pensar en esto como si se tratase de "sumar strings" en `python`... Ten
 
 ---
 
-En muchas ocasiones es conveniente definir un elemento identidad para una operación (en este caso, la concatenación de palabras). La identidad de la concatenación de palabras es la palabra vacía, que denotaremos como $\lambda$ (pensad en el string vacío `""` en `python`). $\lambda$ tiene las siguienets propiedades:
+En muchas ocasiones es conveniente definir un elemento identidad para una operación (en este caso, la concatenación de palabras). La identidad de la concatenación de palabras es la palabra vacía, que denotaremos como $\lambda$ (pensad en el string vacío `""` en `python`). $\lambda$ tiene las siguientes propiedades:
 
 1. $|\lambda| = 0$
-2. $\mathcal{A}^0 = \left\{\lambda\right\}$
+2. $\mathcal{A}^0 = \left\\{\lambda\right\\}$
 3. $\forall x\in\mathcal{A}^+,\quad x\neq\lambda$
 4. $|x| = 0 \Leftrightarrow x = \lambda$
 
@@ -152,14 +152,14 @@ De esta manera podemos generar otro conjunto, el cual incluye a la palabra vací
 
 $$
 \begin{align*}
-\mathcal{A}^* &= \mathcal{A}^+\cup\left\{\lambda\right\}\\
+\mathcal{A}^* &= \mathcal{A}^+\cup\left\\{\lambda\right\\}\\
 &= \mathcal{A}^+\cup\mathcal{A}^0\\
 &= \left(\bigcup_{n\geq1}\mathcal{A}^n\right)\cup\mathcal{A}^0\\
 &= \bigcup_{n\geq0}\mathcal{A}^n
 \end{align*}
 $$
 
-Podemos extender la operación de concatenación de palabras a $\mathcal{A}^*$, de manera que para cualquier $x,y\in\mathcal{A}^*$, se cumplen las propiedades anteriores de la concatenación, y además
+Podemos extender la operación de concatenación de palabras a $\mathcal{A}^\*$, de manera que para cualquier $x,y\in\mathcal{A}^*$, se cumplen las propiedades anteriores de la concatenación, y además
 
 $$
 \lambda x = x\lambda = x
@@ -203,7 +203,7 @@ También es posible "_extraer_" trozos de una palabra. Si tenemos una palabra $x
 
 $$
 x[i:j] =\begin{cases}
-& x[i]\dotsx[j],\quad 1\leq i\leq j\leq|x|\\
+& x[i]\dots x[j],\quad 1\leq i\leq j\leq|x|\\
 & x[i],\quad 1\leq i = j\leq |x|\\
 & \lambda,\quad\text{en otro caso}
 \end{cases}
@@ -228,10 +228,10 @@ Es decir, que el orden alfabético de los símbolos de $\mathcal{A}$ es el orden
 Este órden alfabético se puede extender a las palabras de $\mathcal{A}^*$ de la siguiente manera. Dadas dos palabras $x,y\in\mathcal{A}^+$, decimos que $x$ es **menor** que $y$ en el orden alfabético si y solo si:
 
 $$
-x < y \Leftrightarrow\begin{cases}
-& \left(\exists u\in\mathcal{A}^+:y=xu\right)\\
-& \vee\left(\exists u,v,w\in\mathcal{A}^*, \exists a,b\in\mathcal{A}:(x=uav
-)\wedge (y=ubw) \wedge (a<b)\right)\\
+x < y \Leftrightarrow \begin{cases}
+& \left\(\exists u\in\mathcal{A}^+:y=xu\right\)\\
+& \vee\left\(\exists u,v,w\in\mathcal{A}^*, \exists a,b\in\mathcal{A}:\left\(x=uav
+\right\)\wedge \left\(y=ubw\right\) \wedge \left\(a < b\right\)\right\)\\
 \end{cases}
 $$
 
@@ -313,7 +313,7 @@ Podemos ver que si $u=\lambda$, entonces $x$ es un prefijo de $y$, y si $v=\lamb
 Sean dos alfabetos $\mathcal{A}$ y $\mathcal{B}$ (no necesariamente distintos), entonces una aplicación 
 
 $$
-h:\mathcal{A}^*\rightarrow\mathcal{B}^*
+h:\mathcal{A}^\*\rightarrow\mathcal{B}^\*
 $$
 
 es un homomorfismo siempre que
@@ -322,7 +322,7 @@ $$
 \forall x,y\in\mathcal{A}^*:h(xy)=h(x)h(y)
 $$
 
-Es decir, los homomorfismos preservan las operaciones de concatenación de palabras; y por ende preservan la estructura de las palabras. En consecuencia, $\mathcal{B}^*$ queda totalmente determinado por $\mathcal{A}^*$ y el homomorfismo $h$ sobre cada elemento de $\mathcal{A}$.
+Es decir, los homomorfismos preservan las operaciones de concatenación de palabras; y por ende preservan la estructura de las palabras. En consecuencia, $\mathcal{B}^\*$ queda totalmente determinado por $\mathcal{A}^\*$ y el homomorfismo $h$ sobre cada elemento de $\mathcal{A}$.
 
 Una propiedad importante es que $h(\lambda)=\lambda$, es decir, que el homomorfismo de la palabra vacía es la palabra vacía.
 
@@ -345,7 +345,7 @@ Es más, la aplicación reiterada de la permutación circular por la izquierda s
 
 ### Secuencias de palabras y ordenaciones
 
-Sea $\boldsymbol{x} = \left\langle x_1,x_2,\dots,x_n\right\rangle$ una secuencia de palabras $x_i\in\mathcal{A}^*,i=1,\dots,n$, y supóngase una ordenación alfabética sobre $\mathcal{A}^*$ (como hemos explicaod anteriormente). Entonces se define la secuencia ordenada $\boldsymbol{z}$
+Sea $\boldsymbol{x} = \left\langle x_1,x_2,\dots,x_n\right\rangle$ una secuencia de palabras $x_i\in\mathcal{A}^\*,i=1,\dots,n$, y supóngase una ordenación alfabética sobre $\mathcal{A}^*$ (como hemos explicado anteriormente). Entonces se define la secuencia ordenada $\boldsymbol{z}$
 
 $$
 \boldsymbol{z} = \text{ord}\left(\boldsymbol{x}\right)
