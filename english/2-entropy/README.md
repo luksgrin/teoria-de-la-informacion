@@ -16,7 +16,7 @@ In the previous example, the random variable $X$ is discrete, because it takes v
 
 #### Probability Function
 
-The probability function of a random variable is a function that assigns to each value of the random variable the probability that this value occurs. For example, if we roll a die, the probability function of the random variable $X$ that represents the number appearing on the top face of the die is a function that assigns to each number in the set $\{1,2,3,4,5,6\}$ the probability of that number coming up. In this case, the probability function is uniform because all the numbers have the same probability of appearing.
+The probability function of a random variable is a function that assigns to each value of the random variable the probability that this value occurs. For example, if we roll a die, the probability function of the random variable $X$ that represents the number appearing on the top face of the die is a function that assigns to each number in the set $\\{1,2,3,4,5,6\\}$ the probability of that number coming up. In this case, the probability function is uniform because all the numbers have the same probability of appearing.
 
 For a discrete random variable, the probability function can be represented in a table or with a formula. For example, if we roll a die, the probability function of the random variable $X$ that represents the number appearing on the top face of the die can be represented with the following table:
 
@@ -123,12 +123,12 @@ In information theory, we start with an information source defined as a pair $(S
 
 Since the information source introduces uncertainty in the random variable defined by the predefined alphabet, entropy is useful for measuring the degree of uncertainty, the degree of randomness in the information source, and consequently estimate the average units of information needed to encode all possible values that may occur in the information source.
 
-Due to the properties of the logarithm, \( H_k(X) \) has the following alternative (but equivalent) definitions:
+Due to the properties of the logarithm, $H_k(X)$ has the following alternative (but equivalent) definitions:
 
-- \( H_k(X) = -\sum_{i=0}^n \log_k\left(P(X=x_i)\right) \cdot P(X=x_i) \)
-- \( H_k(X) = \sum_{i=0}^n \log_k\left(\frac{1}{P(X=x_i)}\right) P(X=x_i) \)
+- $H_k(X) = -\sum_{i=0}^n \log_k\left(P(X=x_i)\right) \cdot P(X=x_i)$
+- $H_k(X) = \sum_{i=0}^n \log_k\left(\frac{1}{P(X=x_i)}\right) P(X=x_i)$
 
-Furthermore, due to the properties of the logarithm (specifically that \( \log_a(b) = \frac{\log_c(b)}{\log_c(a)} \)), it holds that \( H_b(X) = \log_b(a) \cdot H_a(X) \). The proof is straightforward:
+Furthermore, due to the properties of the logarithm (specifically that $\log_a(b) = \frac{\log_c(b)}{\log_c(a)}$), it holds that $H_b(X) = \log_b(a) \cdot H_a(X)$. The proof is straightforward:
 
 $$
 \begin{align*}
@@ -146,35 +146,35 @@ $$
 
 #### Example 1: Entropy of a Discrete Random Variable
 
-_Let the alphabet_ \( S = \{a,b,c,d\} \ _with a probability distribution_ \( P = \left\{\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{8}\right\} \). _The entropy of the random variable_ \( X \ _defined by the alphabet_ \( S \ _and the probability distribution_ \( P \ _is:_
+_Let the alphabet_ $S = \\{a,b,c,d\\}$ _with a probability distribution_ $P = \left\\{\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{8}\right\\}$. _The entropy of the random variable_ $X$ _defined by the alphabet_ $S$ _and the probability distribution_ $P$ _is:_
 
 $$
 H(X) = -\left(\frac{1}{2}\log\left(\frac{1}{2}\right) + \frac{1}{4}\log\left(\frac{1}{4}\right) + \frac{1}{8}\log\left(\frac{1}{8}\right) + \frac{1}{8}\log\left(\frac{1}{8}\right)\right) = 1.75
 $$
 
-The entropy of the random variable \( X \) is 1.75 bits.
+The entropy of the random variable $X$ is 1.75 bits.
 
 ----
 
-An interesting property of entropy is the following: Let \( X \) be a random variable over the alphabet \( \{x_1,x_2,\dots,x_n\} \), then:
+An interesting property of entropy is the following: Let $X$ be a random variable over the alphabet $\\{x_1,x_2,\dots,x_n\\}$, then:
 
 $$
 0 \leq H(X) \leq \log(n)
 $$
 
-The entropy of a random variable \( X \) is bounded by \( 0 \) and \( \log(n) \), where \( n \) is the number of elements in the alphabet of the random variable. Entropy is maximized when the probability distribution is uniform, and minimized when the probability distribution is degenerate (i.e., when a single value of the alphabet has probability 1 and all other values have probability 0).
+The entropy of a random variable $X$ is bounded by $0$ and $\log(n)$, where $n$ is the number of elements in the alphabet of the random variable. Entropy is maximized when the probability distribution is uniform, and minimized when the probability distribution is degenerate (i.e., when a single value of the alphabet has probability 1 and all other values have probability 0).
 
 ----
 
 #### Example 2: Entropy of a Bernoulli Distributed Random Variable
 
-_Let_ \( X \ _be a Bernoulli distributed random variable with parameter_ \( p \) _(i.e.,_ \( X \sim \text{Bernoulli}(p) \), _which means that our random variable measures "the number of successes in a Bernoulli experiment"). The probability function of_ \( X \ _is:_
+_Let_ $X$ _be a Bernoulli distributed random variable with parameter_ $p$ _(i.e.,_ $X \sim \text{Bernoulli}(p)$, _which means that our random variable measures "the number of successes in a Bernoulli experiment"). The probability function of_ $X$ _is:_
 
 $$
 P(X=x) = p^x(1-p)^{1-x} \quad \text{for } x \in \{0,1\}
 $$
 
-_The entropy of the random variable_ \( X \) _is:_
+_The entropy of the random variable_ $X$ _is:_
 
 $$
 \begin{align*}
@@ -184,11 +184,11 @@ H(X) &= -\sum_{x=0}^1 p^x(1-p)^{1-x}\log\left(p^x(1-p)^{1-x}\right) \\
 \end{align*}
 $$
 
-If we represent the entropy of the random variable \( X \) as a function of \( p \), we obtain the following graph:
+If we represent the entropy of the random variable $X$ as a function of $p$, we obtain the following graph:
 
 ![Bernoulli entropy](./img/bernoulli_entropy.png)
 
-_What does this mean?_ The entropy of a Bernoulli random variable is maximized when \( p=0.5 \), that is, when the probability distribution is uniform. This makes sense because in a uniform distribution, all values of the alphabet have the same probability of occurring, and therefore there is more uncertainty about the value that the random variable will take. On the other hand, the entropy of a Bernoulli random variable is minimized when \( p=0 \) or \( p=1 \), that is, when the probability distribution is degenerate. This also makes sense because in a degenerate distribution, only one value of the alphabet has probability 1 and the rest have probability 0, and therefore there is no uncertainty about the value that the random variable will take.
+_What does this mean?_ The entropy of a Bernoulli random variable is maximized when $p=0.5$, that is, when the probability distribution is uniform. This makes sense because in a uniform distribution, all values of the alphabet have the same probability of occurring, and therefore there is more uncertainty about the value that the random variable will take. On the other hand, the entropy of a Bernoulli random variable is minimized when $p=0$ or $p=1$, that is, when the probability distribution is degenerate. This also makes sense because in a degenerate distribution, only one value of the alphabet has probability 1 and the rest have probability 0, and therefore there is no uncertainty about the value that the random variable will take.
 
 <details>
 <summary><em>How would this be programmed in <code>python</code>?</em></summary>
@@ -222,13 +222,13 @@ plt.tick_params(axis="both", which="major", labelsize=14)
 
 #### Reminder: Joint and Conditional Probabilities
 
-Given two random variables \(X\) and \(Y\), the joint probability of \(X\) and \(Y\) is the probability that both random variables take specific values. It is denoted as \(P(X=x,Y=y)\), and is calculated as:
+Given two random variables $X$ and $Y$, the joint probability of $X$ and $Y$ is the probability that both random variables take specific values. It is denoted as $P(X=x,Y=y)$, and is calculated as:
 
 $$
 P(X=x,Y=y) = P(Y=y|X=x)P(X=x)
 $$
 
-where \(P(Y=y|X=x)\) is the conditional probability of \(Y\) given \(X\), i.e., the probability that \(Y\) takes a specific value given that \(X\) has taken a specific value.
+where $P(Y=y|X=x)$ is the conditional probability of $Y$ given $X$, i.e., the probability that $Y$ takes a specific value given that $X$ has taken a specific value.
 
 Similarly, we can define the joint probability as:
 
@@ -242,19 +242,19 @@ $$
 P(Y=y|X=x) = \frac{P(X=x|Y=y)P(Y=y)}{P(X=x)}
 $$
 
-Additionally, if the random variables \(X\) and \(Y\) are independent, then the joint probability of \(X\) and \(Y\) is equal to the product of the marginal probabilities of \(X\) and \(Y\):
+Additionally, if the random variables $X$ and $Y$ are independent, then the joint probability of $X$ and $Y$ is equal to the product of the marginal probabilities of $X$ and $Y$:
 
 $$
 P(X=x,Y=y) = P(X=x)P(Y=y)
 $$
 
-Why? Because if \(X\) and \(Y\) are independent, the probability of \(Y\) taking a specific value does not depend on \(X\) taking a specific value, and vice versa. Hence, \(P(Y=y|X=x) = P(Y=y)\) and \(P(X=x|Y=y) = P(X=x)\).
+Why? Because if $X$ and $Y$ are independent, the probability of $Y$ taking a specific value does not depend on $X$ taking a specific value, and vice versa. Hence, $P(Y=y|X=x) = P(Y=y)$ and $P(X=x|Y=y) = P(X=x)$.
 
 #### Joint Entropy and Conditional Entropy
 
 So far, we have defined the entropy of a single random variable. But in many problems of information theory, we are interested in the entropy of two or more random variables.
 
-The joint entropy of two random variables \(X\) and \(Y\) is defined as the entropy of the random variable \((X,Y)\), which is a random variable that takes values in the Cartesian product (i.e., all possible pairs) of the alphabets of \(X\) and \(Y\). The joint entropy of \(X\) and \(Y\) is denoted as \(H(X,Y)\), and is calculated as follows:
+The joint entropy of two random variables $X$ and $Y$ is defined as the entropy of the random variable $(X,Y)$, which is a random variable that takes values in the Cartesian product (i.e., all possible pairs) of the alphabets of $X$ and $Y$. The joint entropy of $X$ and $Y$ is denoted as $H(X,Y)$, and is calculated as follows:
 
 $$
 H(X,Y) = -\sum_{x\in S_X}\sum_{y\in S_Y} P(X=x,Y=y)\log\left(P(X=x,Y=y)\right)
@@ -272,15 +272,15 @@ $$
 H(X,Y) = -\sum_{i=0}^n\sum_{j=0}^m P(X=x_i,Y=y_j)\log\left(P(X=x_i,Y=y_j)\right)
 $$
 
-In some cases, this notation is clearer than the notation with the alphabets \(S_X\) and \(S_Y\). Usually \(S_X = S_Y\), meaning we are using the same alphabet for both random variables.
+In some cases, this notation is clearer than the notation with the alphabets $S_X$ and $S_Y$. Usually $S_X = S_Y$, meaning we are using the same alphabet for both random variables.
 
-Similarly to joint entropy, we can define the conditional entropy of a random variable \(X\) given another random variable \(Y\). The conditional entropy of \(X\) given \(Y\) is denoted as \(H(X|Y)\), and is calculated as follows:
+Similarly to joint entropy, we can define the conditional entropy of a random variable $X$ given another random variable $Y$. The conditional entropy of $X$ given $Y$ is denoted as $H(X|Y)$, and is calculated as follows:
 
 $$
 H(X|Y) = -\sum_{x\in S_X}\sum_{y\in S_Y} P(X=x,Y=y)\log\left(P(X=x|Y=y)\right)
 $$
 
-Furthermore, using the properties of joint and conditional probabilities, we can write the conditional entropy of \(X\) given \(Y\) as:
+Furthermore, using the properties of joint and conditional probabilities, we can write the conditional entropy of $X$ given $Y$ as:
 
 $$
 \begin{align*}
@@ -291,7 +291,7 @@ H(X|Y) &= -\sum_{x\in S_X}\sum_{y\in S_Y} P(X=x,Y=y)\log\left(P(X=x|Y=y)\right) 
 \end{align*}
 $$
 
-As demonstrated above, the properties of joint entropy arise from working with the joint and conditional probabilities of random variables \(X\) and \(Y\).
+As demonstrated above, the properties of joint entropy arise from working with the joint and conditional probabilities of random variables $X$ and $Y$.
 
 One of these properties is:
 
@@ -312,19 +312,19 @@ H(X,Y) &= -\sum_{x\in S_X}\sum_{y\in S_Y} P(X=x,Y=y)\log\left(P(X=x,Y=y)\right) 
 \end{align*}
 $$
 
-In the same way, we can prove that \(H(X,Y) = H(Y) + H(X|Y)\).
+In the same way, we can prove that $H(X,Y) = H(Y) + H(X|Y)$.
 
-From this result, we can derive the following inequalities for the random variables \(X\) and \(Y\):
+From this result, we can derive the following inequalities for the random variables $X$ and $Y$:
 
-1. \(H(X,Y) \leq H(X) + H(Y)\)
-2. \(H(X,Y) = H(X) + H(Y)\) (if \(X\) and \(Y\) are independent)
+1. $H(X,Y) \leq H(X) + H(Y)$
+2. $H(X,Y) = H(X) + H(Y)$ (if $X$ and $Y$ are independent)
 
 _A simple way to think about these properties is to think about joint and conditional probabilities, from which we derive similar inequalities. However, in the case of entropy, due to the logarithm, the inequalities involve sums rather than products._
 
 A corollary of the above properties is:
 
-1. \(H(X|Y) \leq H(X)\)
-2. \(H(X|Y) = H(X)\) (if \(X\) and \(Y\) are independent)
+1. $H(X|Y) \leq H(X)$
+2. $H(X|Y) = H(X)$ (if $X$ and $Y$ are independent)
 
 ----
 
@@ -342,7 +342,7 @@ $$
 
 #### Relative Entropy
 
-Relative entropy, also known as **Kullback-Leibler divergence**, is a measure of the difference between two probability distributions (the amount of information needed to describe one probability distribution using another). The relative entropy of two probability distributions \(P\) and \(Q\) is denoted as \(D(P||Q)\), and is calculated as:
+Relative entropy, also known as **Kullback-Leibler divergence**, is a measure of the difference between two probability distributions (the amount of information needed to describe one probability distribution using another). The relative entropy of two probability distributions $P$ and $Q$ is denoted as $D(P||Q)$, and is calculated as:
 
 $$
 D(P||Q) = \sum_{x\in S} P(x)\log\left(\frac{P(x)}{Q(x)}\right)
@@ -354,11 +354,11 @@ $$
 D(P||Q) = \int_{-\infty}^{\infty} f(x)\log\left(\frac{f(x)}{g(x)}\right)dx
 $$
 
-Relative entropy is always **non-negative**, and is equal to zero if and only if \(P\) and \(Q\) are equal.
+Relative entropy is always **non-negative**, and is equal to zero if and only if $P$ and $Q$ are equal.
 
 #### Mutual Information
 
-The mutual information of two random variables \(X\) and \(Y\) is a measure of the amount of information that one random variable provides about the other. The mutual information of \(X\) and \(Y\) is denoted as \(I(X;Y)\), and is calculated as:
+The mutual information of two random variables $X$ and $Y$ is a measure of the amount of information that one random variable provides about the other. The mutual information of $X$ and $Y$ is denoted as $I(X;Y)$, and is calculated as:
 
 $$
 I(X;Y) = \sum_{x\in S_X}\sum_{y\in S_Y} P(X=x,Y=y)\log\left(\frac{P(X=x,Y=y)}{P(X=x)P(Y=y)}\right)
@@ -416,7 +416,7 @@ $$
 f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}
 $$
 
-_(i.e., a normal distribution with mean $\mu$ and variance $\sigma^2$)_
+_(i.e., a normal distribution with mean_ $\mu$ _and variance_ $\sigma^2$ _)_
 
 Its entropy is:
 
