@@ -19,9 +19,9 @@ La teoría de la información se basa en la teoría de la probabilidad y en la t
 
 En general, un sistema de comunicación consta de los siguientes elementos:
 
-- **Fuente de información**: es el origen de los mensajes que se van a transmitir. Puede ser un ser humano, un sensor, un ordenador, etc.
+- **Fuente de información**: es el origen de los mensajes que se van a transmitir. Puede ser un ser humano, un sensor, un ordenador, etc...
 - **Codificador**: es el encargado de transformar los mensajes de la fuente en una forma adecuada para su transmisión a través del canal de comunicación.
-- **Canal de comunicación**: es el medio físico a través del cual se transmiten los mensajes. Puede ser un cable, una fibra óptica, el aire, etc.
+- **Canal de comunicación**: es el medio físico a través del cual se transmiten los mensajes. Puede ser un cable, una fibra óptica, el aire, etc...
 - **Decodificador**: es el encargado de transformar los mensajes recibidos a través del canal en una forma adecuada para su interpretación por el destinatario.
 - **Destinatario**: es el receptor de los mensajes transmitidos por el sistema de comunicación.
 - **Ruido**: es cualquier perturbación que afecta a la transmisión de los mensajes a través del canal de comunicación.

@@ -16,6 +16,8 @@ _Contenido tal y como fue impartido en el Grado en Ciencia de Datos de la Univer
 
 _Translated content from what was taught in the Bachelor's Degree in Data Science at the Universitat Politècnica de València during the 2023-2024 academic year in the subject "Discrete Modeling and Information Theory"_
 
-```python
-Ellipsis
-```
+1. [Introduction](./english/README.md)
+2. [Entropy](./english/2-entropy/README.md)
+3. [Language Structure](./english/3-language-structure/README.md)
+4. [Information Sources](./english/4-information-sources/README.md)
+5. [Codes](./english/5-codes/README.md)
