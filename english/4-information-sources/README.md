@@ -60,7 +60,7 @@ Given a Markov source of order $m$, its state diagram can be established, showin
 
 #### Examples
 
-From a binary alphabet $\left\{0,1\right\}$, a second-order Markov source can be defined with the following states and conditional probabilities:
+From a binary alphabet $\left\\{0,1\right\\}$, a second-order Markov source can be defined with the following states and conditional probabilities:
 
 - $P(0|00) = P(1|11) = 0.7$
 - $P(1|00) = P(0|11) = 0.3$
@@ -154,11 +154,11 @@ Given a Markov source of order $m$ with an alphabet $\mathcal{S}$ and a probabil
 
 #### Example
 
-For the example of the second-order Markov source, the affine source would be the memoryless source with $\mathcal{S}=\left\{0,1\right\}$ and $P=\left\{\frac{1}{2},\frac{1}{2}\right\}$.
+For the example of the second-order Markov source, the affine source would be the memoryless source with $\mathcal{S}=\left\\{0,1\right\\}$ and $P=\left\\{\frac{1}{2},\frac{1}{2}\right\\}$.
 
 ---
 
-For the entropy calculation of a Markov source of order $m$, over an alphabet $\mathcal{S}=\left\{s_1,s_2,\dots,s_n\right\}$ and conditional probability distribution $P(s_i|s_{i_1},\dots,s_{i_m})$, we have that $p(s_i, s_{i_1},\dots,s_{i_m}) = p(s_i|s_{i_1},\dots,s_{i_m})\cdot p(s_{i_1},\dots,s_{i_m})$, which allows us to calculate the conditional entropy:
+For the entropy calculation of a Markov source of order $m$, over an alphabet $\mathcal{S}=\left\\{s_1,s_2,\dots,s_n\right\\}$ and conditional probability distribution $P(s_i|s_{i_1},\dots,s_{i_m})$, we have that $p(s_i, s_{i_1},\dots,s_{i_m}) = p(s_i|s_{i_1},\dots,s_{i_m})\cdot p(s_{i_1},\dots,s_{i_m})$, which allows us to calculate the conditional entropy:
 
 $$
 H(\mathcal{S}|s_{i_1},\dots,s_{i_m}) = -\sum_{i=1}^{n}p(s_i|s_{i_1},\dots,s_{i_m})\log\left(p(s_i|s_{i_1},\dots,s_{i_m})\right)
