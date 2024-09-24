@@ -16,7 +16,7 @@ In the previous example, the random variable $X$ is discrete, because it takes v
 
 #### Probability Function
 
-The probability function of a random variable is a function that assigns to each value of the random variable the probability that this value occurs. For example, if we roll a die, the probability function of the random variable $X$ that represents the number appearing on the top face of the die is a function that assigns to each number in the set $\{1,2,3,4,5,6\}$ the probability of that number coming up. In this case, the probability function is uniform because all the numbers have the same probability of appearing.
+The probability function of a random variable is a function that assigns to each value of the random variable the probability that this value occurs. For example, if we roll a die, the probability function of the random variable $X$ that represents the number appearing on the top face of the die is a function that assigns to each number in the set $\\{1,2,3,4,5,6\\}$ the probability of that number coming up. In this case, the probability function is uniform because all the numbers have the same probability of appearing.
 
 For a discrete random variable, the probability function can be represented in a table or with a formula. For example, if we roll a die, the probability function of the random variable $X$ that represents the number appearing on the top face of the die can be represented with the following table:
 
@@ -123,7 +123,7 @@ In information theory, we start with an information source defined as a pair $(S
 
 Since the information source introduces uncertainty in the random variable defined by the predefined alphabet, entropy is useful for measuring the degree of uncertainty, the degree of randomness in the information source, and consequently estimate the average units of information needed to encode all possible values that may occur in the information source.
 
-Due to the properties of the logarithm, \( H_k(X) \) has the following alternative (but equivalent) definitions:
+Due to the properties of the logarithm, $H_k(X)$ has the following alternative (but equivalent) definitions:
 
 - $H_k(X) = -\sum_{i=0}^n \log_k\left(P(X=x_i)\right) \cdot P(X=x_i)$
 - $H_k(X) = \sum_{i=0}^n \log_k\left(\frac{1}{P(X=x_i)}\right) P(X=x_i)$
@@ -416,7 +416,7 @@ $$
 f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}
 $$
 
-_(i.e., a normal distribution with mean $\mu$ and variance $\sigma^2$)_
+_(i.e., a normal distribution with mean_ $\mu$ _and variance_ $\sigma^2$ _)_
 
 Its entropy is:
 
